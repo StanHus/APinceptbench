@@ -19,9 +19,13 @@ env/
 *.swp
 *.swo
 
-# Benchmark outputs (keep reports in docs/reports/ tracked)
+# Benchmark outputs
 benchmark_official_*.json
+*_failures*.json
 docs/reports/LATEST.md
+
+# Archive (old scripts)
+archive/
 
 # OS
 .DS_Store
