@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ap-benchmark"
+version = "1.1.0"
+description = "Independent benchmark system for evaluating AP Social Studies questions using Claude as an evaluator"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Stan Hussain"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Education",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = ["benchmark", "evaluation", "education", "ap", "social-studies", "claude", "llm"]
+dependencies = [
+    "anthropic>=0.40.0",
+    "pydantic>=2.0.0",
+    "httpx>=0.25.0",
+    "pymongo[srv]>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.scripts]
+ap-benchmark = "ap_benchmark.benchmark:main"
+
+[project.urls]
+Repository = "https://github.com/stanhus/ap-benchmark"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ap_benchmark*"]
+
+[tool.pytest.ini_options]
+testpaths = ["ap_benchmark/tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]

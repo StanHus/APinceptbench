@@ -1,0 +1,1729 @@
+{
+  "meta": {
+    "run_id": "7084f6e5-4431-4998-a49c-1236af5989c9",
+    "exported_at": "2026-02-24T08:28:20.486956",
+    "total_questions": 116,
+    "passed": 73,
+    "failed": 43,
+    "pass_rate": 62.9
+  },
+  "summary": {
+    "by_format": {
+      "fill-in": {
+        "total": 20,
+        "passed": 9,
+        "failed": 11,
+        "pass_rate": 45.0
+      },
+      "match": {
+        "total": 33,
+        "passed": 16,
+        "failed": 17,
+        "pass_rate": 48.5
+      },
+      "msq": {
+        "total": 29,
+        "passed": 23,
+        "failed": 6,
+        "pass_rate": 79.3
+      },
+      "mcq": {
+        "total": 34,
+        "passed": 25,
+        "failed": 9,
+        "pass_rate": 73.5
+      }
+    },
+    "by_difficulty": {
+      "easy": {
+        "total": 40,
+        "passed": 25,
+        "failed": 15,
+        "pass_rate": 62.5
+      },
+      "hard": {
+        "total": 37,
+        "passed": 21,
+        "failed": 16,
+        "pass_rate": 56.8
+      },
+      "medium": {
+        "total": 39,
+        "passed": 27,
+        "failed": 12,
+        "pass_rate": 69.2
+      }
+    },
+    "dimension_failure_counts": {
+      "factual_accuracy": 20,
+      "cognitive_demand": 20,
+      "curriculum_alignment": 17,
+      "difficulty_alignment": 11,
+      "explanation_quality": 10,
+      "clarity": 5,
+      "distractor_quality": 4
+    }
+  },
+  "failures": [
+    {
+      "id": "699cb02b2db3a3826cb465cd",
+      "format": "match",
+      "difficulty": "easy",
+      "topic": "The Great Society",
+      "learning_objective": "Explain the causes and effects of continuing policy debates about the role of the federal government over time.",
+      "overall_score": 0.65,
+      "critical_failures": 1,
+      "non_critical_failures": 0,
+      "question": {
+        "stem": "Match each Great Society policy or action with its direct historical consequence.",
+        "options": [],
+        "correct_answer": "{'a1': 'b2', 'a2': 'b3', 'a3': 'b4', 'a4': 'b1'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Contains a factual error regarding the name of the legislation that created Medicare and Medicaid"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "The passage of the Social Security Act of 1965 to create Medicare and Medicaid",
+          "explanation": "This is factually incorrect. Medicare and Medicaid were created by separate legislation in 1965, not by the Social Security Act of 1965. They were amendments to the original Social Security Act of 1935, but the specific legislation was the Social Security Amendments of 1965."
+        }
+      ]
+    },
+    {
+      "id": "699cb0442db3a3826cb465d4",
+      "format": "fill-in",
+      "difficulty": "easy",
+      "topic": "Reagan and Conservatism",
+      "learning_objective": "Explain the causes and effects of continuing policy debates about the role of the federal government over time",
+      "overall_score": 0.47,
+      "critical_failures": 1,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "Because the Republican Revolution of 1994 gave supporters of conservatism control of both houses of Congress, ___1___ occurred, which led to ___2___.",
+        "options": [],
+        "correct_answer": "[{'id': '1', 'accepted_answers': ['a major shift in legislative power', 'a change in control of the lawmaking process', 'a transfer of power in the legislature'], 'answer_explanation': 'This answer de"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "Content fails to test the specific learning objective about policy debates regarding federal government role over time, instead focusing on generic legislative power concepts"
+        },
+        {
+          "name": "cognitive_demand",
+          "reasoning": "Question requires only basic recall of information directly provided in curriculum materials without requiring analysis or synthesis"
+        },
+        {
+          "name": "explanation_quality",
+          "reasoning": "Explanation is superficial and doesn't provide meaningful instruction about the concepts or their broader significance"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "Because the Republican Revolution of 1994 gave supporters of conservatism control of both houses of Congress, ___1___ occurred, which led to ___2___.",
+          "explanation": "The question tests generic knowledge about legislative power shifts but doesn't address the specific learning objective about policy debates regarding the federal government's role over time"
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "a major shift in legislative power...a significant influence on subsequent policy decisions",
+          "explanation": "The question requires only basic recall of cause-and-effect relationships that are directly stated in the curriculum statement, with no analysis or higher-order thinking required"
+        },
+        {
+          "dimension": "explanation_quality",
+          "snippet": "This answer demonstrates understanding that gaining control of Congress immediately changed the balance of power between political parties in the lawmaking process.",
+          "explanation": "The explanation is minimal and doesn't provide substantive teaching about why these effects occurred or connect to broader themes about federal government role debates"
+        }
+      ]
+    },
+    {
+      "id": "699cb0702db3a3826cb465e0",
+      "format": "match",
+      "difficulty": "hard",
+      "topic": "Government Policies During the Civil War",
+      "learning_objective": "Explain how Lincoln's leadership during the Civil War impacted American ideals over the course of the war.",
+      "overall_score": 0.72,
+      "critical_failures": 0,
+      "non_critical_failures": 3,
+      "question": {
+        "stem": "Match each specific component of President Lincoln's 1863 executive policy to its significant consequence for the trajectory of the Civil War and the evolution of American ideals.",
+        "options": [],
+        "correct_answer": "{'a1': 'b1', 'a2': 'b2', 'a3': 'b3', 'a4': 'b4'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "cognitive_demand",
+          "reasoning": "While the question requires understanding consequences, the redundant terms in Column A reduce the analytical challenge significantly."
+        },
+        {
+          "name": "distractor_quality",
+          "reasoning": "No distractors are provided, making this a simple 1:1 matching exercise rather than one that tests deeper understanding through elimination of plausible but incorrect options."
+        },
+        {
+          "name": "difficulty_alignment",
+          "reasoning": "The actual difficulty is lower than the requested 'hard' level due to structural issues that make the question easier to solve."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Column A terms are overly similar and redundant",
+          "explanation": "Terms a1, a3, and a4 all essentially describe the same action (Lincoln issuing the Emancipation Proclamation) with only minor variations in wording. This reduces the cognitive demand as students don't need to distinguish between meaningfully different concepts."
+        },
+        {
+          "dimension": "distractor_quality",
+          "snippet": "No distractors provided in Column B",
+          "explanation": "The matching exercise has exactly 4 terms and 4 definitions with no extra options, making it a simple 1:1 correspondence rather than requiring students to eliminate incorrect options and demonstrate deeper understanding."
+        },
+        {
+          "dimension": "difficulty_alignment",
+          "snippet": "Overall structure creates easier difficulty than requested 'hard' level",
+          "explanation": "The 1:1 matching format with no distractors and highly similar terms makes this more of a medium difficulty question rather than the requested hard level, as students can use process of elimination too easily."
+        }
+      ]
+    },
+    {
+      "id": "699cb0792db3a3826cb465e4",
+      "format": "match",
+      "difficulty": "hard",
+      "topic": "Failure of Reconstruction",
+      "learning_objective": "Explain how and why Reconstruction resulted in continuity and change in regional and national understandings of what it meant to be American.",
+      "overall_score": 0.65,
+      "critical_failures": 1,
+      "non_critical_failures": 0,
+      "question": {
+        "stem": "Match the specific historical causes and policy decisions during the Failure of Reconstruction to their direct economic and social consequences for the American South.",
+        "options": [],
+        "correct_answer": "{'a1': 'b3', 'a2': 'b2', 'a3': 'b1', 'a4': 'b4'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "While the content tests the correct topic (land ownership patterns, sharecropping system), it focuses on the wrong time period. The curriculum specifies 1877-1900 but the content examines Reconstruction-era policies (1865-1877) rather than their post-1877 consequences."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "Time Period: 1877-1900",
+          "explanation": "The curriculum context specifies 1877-1900 time period, but the content focuses on Reconstruction policies and their immediate aftermath, which primarily occurred 1865-1877. The federal withdrawal and land redistribution decisions happened during Reconstruction, not after 1877."
+        }
+      ]
+    },
+    {
+      "id": "699cb0852db3a3826cb465e6",
+      "format": "msq",
+      "difficulty": "easy",
+      "topic": "Failure of Reconstruction",
+      "learning_objective": "Explain how and why Reconstruction resulted in continuity and change in regional and national understandings of what it meant to be American.",
+      "overall_score": 0.47,
+      "critical_failures": 1,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "Which of the following statements describe the economic conditions that characterized the failure of Reconstruction in the South?",
+        "options": [],
+        "correct_answer": "['A', 'C']"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Contains factual error about time period - explanation states Reconstruction failure period as 1865-1877, but curriculum context specifies 1877-1900 as the relevant time period"
+        },
+        {
+          "name": "cognitive_demand",
+          "reasoning": "Question requires only factual recall of economic conditions rather than analysis of how/why these conditions developed or their significance. Does not meet AP-level thinking requirements."
+        },
+        {
+          "name": "explanation_quality",
+          "reasoning": "While comprehensive, the explanation contains a factual error about the time period of Reconstruction failure, defining it as 1865-1877 rather than the post-1877 period specified in curriculum"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Which of the following statements describe the economic conditions that characterized the failure of Reconstruction in the South?",
+          "explanation": "This is primarily a recall question asking students to identify factual statements rather than requiring analysis, synthesis, or evaluation of how/why these conditions developed or their significance"
+        },
+        {
+          "dimension": "explanation_quality",
+          "snippet": "In the context of AP United States History (APUSH), the \"Failure of Reconstruction\" refers to the period between 1865 and 1877",
+          "explanation": "The explanation contains a factual error - the curriculum specifies time period 1877-1900, but explanation defines Reconstruction failure as ending in 1877"
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "the period between 1865 and 1877 when the federal government's attempts to reintegrate the South and protect the rights of freedmen largely collapsed",
+          "explanation": "Factual error regarding time period - the curriculum context specifies 1877-1900 as the relevant time period for this content"
+        }
+      ]
+    },
+    {
+      "id": "699cb0852db3a3826cb465e8",
+      "format": "mcq",
+      "difficulty": "hard",
+      "topic": "Migration and Immigration in the 1990s and 2000s",
+      "learning_objective": "Explain the causes and effects of domestic and international migration over time.",
+      "overall_score": 0.55,
+      "critical_failures": 1,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "Between 1990 and 2010, the United States experienced a profound demographic transformation, characterized by the Hispanic population reaching approximately 50 million and significant increases in the Asian American population. Which of the following best evaluates the impact of these immigration patterns on United States society during the 1990s and 2000s?",
+        "options": [],
+        "correct_answer": "D"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Contains a major factual error about the Immigration and Nationality Act of 1965 being repealed, when it was never repealed and actually facilitated the immigration patterns described"
+        },
+        {
+          "name": "explanation_quality",
+          "reasoning": "While the correct answer explanation is adequate, the explanation for option A is weak and circular, failing to provide substantive historical reasoning"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "They were primarily driven by the repeal of the Immigration and Nationality Act of 1965",
+          "explanation": "The Immigration and Nationality Act of 1965 was never repealed - it remains in effect and actually facilitated increased immigration from Latin America and Asia by removing national origin quotas"
+        },
+        {
+          "dimension": "explanation_quality",
+          "snippet": "Option A is incorrect because the question does not establish a link between international immigration and the cessation of domestic migration from the Rust Belt.",
+          "explanation": "This explanation is weak and circular - it says the option is wrong because the question doesn't establish the link, rather than explaining why the claim itself is historically inaccurate"
+        }
+      ]
+    },
+    {
+      "id": "699cb08f2db3a3826cb465eb",
+      "format": "msq",
+      "difficulty": "medium",
+      "topic": "Failure of Reconstruction",
+      "learning_objective": "Explain how and why Reconstruction resulted in continuity and change in regional and national understandings of what it meant to be American.",
+      "overall_score": 0.55,
+      "critical_failures": 1,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "Which of the following statements accurately reflect the economic continuities and challenges that characterized the failure of Reconstruction in the South?",
+        "options": [],
+        "correct_answer": "['B', 'D', 'E']"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Contains multiple significant factual errors about the time period of Reconstruction's failure and specific historical details about land redistribution policies."
+        },
+        {
+          "name": "explanation_quality",
+          "reasoning": "While comprehensive, the explanation contains factual errors that undermine its educational value. The incorrect information about time periods and specific historical events makes this explanation misleading rather than instructive."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "In the context of AP United States History, the \"Failure of Reconstruction\" refers to the period (roughly 1865\u20131877)",
+          "explanation": "This is factually incorrect. The curriculum context specifies the time period as 1877-1900, which is the POST-Reconstruction period. The 'Failure of Reconstruction' in this context refers to the aftermath and consequences after 1877, not the Reconstruction period itself (1865-1877)."
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "While General Sherman's Special Field Orders No. 15 (the \"40 acres and a mule\" promise) initially settled some families on coastal lands, President Andrew Johnson later rescinded these orders.",
+          "explanation": "This is historically inaccurate. Johnson did not rescind Sherman's Field Orders No. 15. The orders were reversed by different mechanisms, and the '40 acres and a mule' phrase was not part of Sherman's orders but came from later Freedmen's Bureau policies."
+        }
+      ]
+    },
+    {
+      "id": "699cb0932db3a3826cb465ed",
+      "format": "match",
+      "difficulty": "hard",
+      "topic": "The Society of the South in the Early Republic",
+      "learning_objective": "Explain how geographic and environmental factors shaped the development of the South from 1800 to 1848.",
+      "overall_score": 0.65,
+      "critical_failures": 1,
+      "non_critical_failures": 0,
+      "question": {
+        "stem": "Analyze the development of the Society of the South in the Early Republic (1800\u20131848) by matching the following historical causes to their long-term social and economic effects.",
+        "options": [],
+        "correct_answer": "{'a1': 'b2', 'a2': 'b4', 'a3': 'b1', 'a4': 'b3'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "The question tests legal, economic, and social structures of slavery rather than how geographic and environmental factors shaped Southern development. Only one term (a2) directly addresses geographic factors."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "The legal codification of the chattel principle, which defined enslaved persons as movable property rather than legal persons",
+          "explanation": "This focuses on legal structures rather than geographic and environmental factors that shaped Southern development"
+        },
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "The concentration of regional capital in the ownership of enslaved labor rather than in urban infrastructure or manufacturing",
+          "explanation": "This addresses economic choices rather than how geography and environment shaped development"
+        },
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "The legal treatment of enslaved individuals as divisible assets to be partitioned among heirs",
+          "explanation": "This focuses on legal and inheritance practices rather than geographic/environmental factors"
+        }
+      ]
+    },
+    {
+      "id": "699cb0962db3a3826cb465f0",
+      "format": "msq",
+      "difficulty": "easy",
+      "topic": "The Society of the South in the Early Republic",
+      "learning_objective": "Explain how geographic and environmental factors shaped the development of the South from 1800 to 1848.",
+      "overall_score": 0.25,
+      "critical_failures": 2,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "Which of the following statements describe the legal and economic status of enslaved people in the society of the South during the early republic?",
+        "options": [],
+        "correct_answer": "['A', 'B']"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Contains temporal inconsistency between curriculum timeframe (1800-1848) and explanation's definition of Early Republic (1790-1820s)"
+        },
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "Question completely fails to address the required learning objective about geographic and environmental factors shaping Southern development. Instead tests legal/economic aspects of slavery without geographic context."
+        },
+        {
+          "name": "cognitive_demand",
+          "reasoning": "Question requires only basic recall of curriculum facts about chattel slavery rather than analysis, synthesis, or evaluation of geographic/environmental impacts"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "Which of the following statements describe the legal and economic status of enslaved people in the society of the South during the early republic?",
+          "explanation": "Question tests legal/economic aspects of slavery but completely ignores the required focus on geographic and environmental factors shaping Southern development"
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "In the Early Republic (roughly 1790\u20131820s)",
+          "explanation": "The curriculum specifies 1800-1848 time period, but explanation defines Early Republic as 1790-1820s, creating temporal mismatch"
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Enslaved individuals were legally categorized as property, which allowed for their inheritance by heirs",
+          "explanation": "This is direct factual recall from the curriculum statement rather than requiring analysis or higher-order thinking"
+        }
+      ]
+    },
+    {
+      "id": "699cb0a32db3a3826cb465f4",
+      "format": "mcq",
+      "difficulty": "medium",
+      "topic": "The Society of the South in the Early Republic",
+      "learning_objective": "Explain how geographic and environmental factors shaped the development of the South from 1800 to 1848.",
+      "overall_score": 0.65,
+      "critical_failures": 1,
+      "non_critical_failures": 0,
+      "question": {
+        "stem": "Following the Louisiana Purchase, the expansion of the cotton economy into new western territories was supported by the legal classification of enslaved people as chattel. Which of the following best explains how the chattel principle shaped the development of society in the South during the early republic?",
+        "options": [],
+        "correct_answer": "C"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "The question fails to test the specified learning objective about geographic and environmental factors shaping Southern development. Instead, it focuses on the legal/economic concept of chattel slavery."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "Which of the following best explains how the chattel principle shaped the development of society in the South during the early republic?",
+          "explanation": "The question tests understanding of how a legal principle (chattel slavery) shaped Southern society, not how geographic and environmental factors shaped Southern development as required by the learning objective"
+        }
+      ]
+    },
+    {
+      "id": "699cb0a62db3a3826cb465f5",
+      "format": "fill-in",
+      "difficulty": "hard",
+      "topic": "Slavery in the British Colonies",
+      "learning_objective": "Explain the causes and effects of slavery in the various British colonial regions.",
+      "overall_score": 0.47,
+      "critical_failures": 1,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "Unlike the contractual labor of indentured servants, the arrival of the first Africans in Jamestown in 1619 eventually ___1___ because ___2___.",
+        "options": [],
+        "correct_answer": "[{'id': '1', 'accepted_answers': ['facilitated the transition to a system of permanent and hereditary bondage', 'initiated the shift toward a labor model based on racial identity rather than temporary"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "The question implies direct causation between the 1619 arrival and the transition to racial slavery, which oversimplifies the gradual historical process"
+        },
+        {
+          "name": "clarity",
+          "reasoning": "Sentence structure creates grammatical confusion by comparing non-parallel concepts"
+        },
+        {
+          "name": "difficulty_alignment",
+          "reasoning": "Difficulty comes from complex wording rather than genuine analytical challenge, and format doesn't truly test hard-level thinking"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "the arrival of the first Africans in Jamestown in 1619 eventually ___1___ because ___2___",
+          "explanation": "This creates a direct causal relationship that is historically inaccurate. The 1619 arrival did not directly cause the transition to racial slavery - this transition occurred gradually over decades through legal and social changes, not as a direct result of the 1619 arrival itself"
+        },
+        {
+          "dimension": "clarity",
+          "snippet": "Unlike the contractual labor of indentured servants, the arrival of the first Africans in Jamestown in 1619 eventually ___1___ because ___2___",
+          "explanation": "The sentence structure is awkward and unclear - it's comparing 'contractual labor' with 'arrival of Africans' which are not parallel concepts, making the sentence grammatically confusing"
+        },
+        {
+          "dimension": "difficulty_alignment",
+          "snippet": "entire question structure",
+          "explanation": "While the question requires understanding complex historical processes, the fill-in format with such lengthy, specific answer choices makes this more of a matching exercise than true analysis. The difficulty is artificially inflated by complex wording rather than genuine analytical demand"
+        }
+      ]
+    },
+    {
+      "id": "699cb0c52db3a3826cb46602",
+      "format": "fill-in",
+      "difficulty": "easy",
+      "topic": "The Environment and Natural Resources from 1968 to 1980",
+      "learning_objective": "Explain how and why policies related to the environment developed and changed from 1968 to 1980.",
+      "overall_score": 0.47,
+      "critical_failures": 1,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "The Clean Water Act of 1972 achieved ___1___ by ___2___.",
+        "options": [],
+        "correct_answer": "[{'id': '1', 'accepted_answers': ['cleaner natural water resources', 'improved water quality in rivers', 'a reduction in water pollution'], 'answer_explanation': \"This blank identifies the intended en"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "Content fails to test the required skill of explaining how and why environmental policies developed and changed. Only tests factual knowledge about what the Clean Water Act did, not the developmental/causal aspects specified in the learning objective."
+        },
+        {
+          "name": "cognitive_demand",
+          "reasoning": "Question requires only basic recall of what the Clean Water Act accomplished. No analysis, synthesis, or evaluation of how/why environmental policies developed during this period."
+        },
+        {
+          "name": "explanation_quality",
+          "reasoning": "Explanation is superficial and doesn't address the historical thinking skills or broader context required by the curriculum standard. Lacks connection to environmental movement development."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "The Clean Water Act of 1972 achieved ___1___ by ___2___.",
+          "explanation": "Question tests what the Act accomplished rather than how and why environmental policies developed and changed from 1968-1980. Missing the causation and development aspects required by the learning objective."
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "The Clean Water Act of 1972 achieved ___1___ by ___2___.",
+          "explanation": "This is pure factual recall about the Act's effects and mechanisms. It requires no analysis of causation, change over time, or understanding of why environmental policies developed during this period."
+        },
+        {
+          "dimension": "explanation_quality",
+          "snippet": "Blank 1: This blank identifies the intended environmental effect of the legislation, which was to improve the state of the nation's water. Blank 2: This blank identifies the mechanism of the law, which involved the government creating uniform requirements to control pollution.",
+          "explanation": "Explanation is minimal and doesn't connect to the broader historical context of environmental movement development or explain why this policy emerged when it did. Lacks the depth expected for AP-level content."
+        }
+      ]
+    },
+    {
+      "id": "699cb0dd2db3a3826cb46610",
+      "format": "match",
+      "difficulty": "easy",
+      "topic": "The American Revolution",
+      "learning_objective": "Explain how various factors contributed to the American victory in the Revolution.",
+      "overall_score": 0.25,
+      "critical_failures": 2,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "Match each action or decision during the American Revolution to its direct consequence or outcome.",
+        "options": [],
+        "correct_answer": "{'a1': 'b1', 'a2': 'b4', 'a3': 'b3', 'a4': 'b2'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "The matching logic contains errors in cause-effect relationships between events"
+        },
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "Content tests causes of independence rather than factors contributing to American victory in the Revolution as specified in the learning objective"
+        },
+        {
+          "name": "cognitive_demand",
+          "reasoning": "Question primarily tests chronological recall rather than analysis of complex factors as required for AP-level thinking"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "Match each action or decision during the American Revolution to its direct consequence or outcome",
+          "explanation": "The curriculum asks to explain factors contributing to American victory in the Revolution, but this content tests causes of independence rather than factors in military victory. The learning objective focuses on why Patriots won the war, not why they declared independence."
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "Correct Matches: {'a1': 'b1', 'a2': 'b4', 'a3': 'b3', 'a4': 'b2'}",
+          "explanation": "The match a2-b4 is incorrect. King George III's rejection of the Olive Branch Petition directly pushed colonists toward independence, but the 'movement for total independence gaining momentum' was more directly caused by Common Sense publication (a3), creating a logical inconsistency in the matching."
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Match each action or decision during the American Revolution to its direct consequence or outcome",
+          "explanation": "This is primarily testing memorization of historical sequence rather than analysis of complex factors. Students can answer by recalling chronological order without understanding how these factors contributed to military victory."
+        }
+      ]
+    },
+    {
+      "id": "699cb0fe2db3a3826cb46620",
+      "format": "mcq",
+      "difficulty": "easy",
+      "topic": "The New Deal",
+      "learning_objective": "Explain how the Great Depression and the New Deal impacted American political, social, and economic life over time.",
+      "overall_score": 0.79,
+      "critical_failures": 0,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "Following the stock market crash of 1929, the federal government sought to restore public confidence in financial institutions through legislative reforms. Which of the following best explains the primary purpose of the Securities and Exchange Commission (SEC) as part of the New Deal?",
+        "options": [],
+        "correct_answer": "A"
+      },
+      "failed_dimensions": [
+        {
+          "name": "cognitive_demand",
+          "reasoning": "This is a pure recall question asking students to identify the purpose of the SEC. No analysis, causation, or higher-order thinking required - just memorization of what the SEC does."
+        },
+        {
+          "name": "explanation_quality",
+          "reasoning": "While the explanation covers why A is correct and addresses each distractor, the explanation for option B is too vague and doesn't identify the specific agency (FDIC) that provided bank deposit insurance."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Which of the following best explains the primary purpose of the Securities and Exchange Commission (SEC) as part of the New Deal?",
+          "explanation": "This is essentially a recall question asking students to identify what the SEC does. It requires no analysis, synthesis, or higher-order thinking - just memorization of the SEC's purpose. The stem provides context but the question itself is 'what was the purpose of X' which is basic factual recall."
+        },
+        {
+          "dimension": "explanation_quality",
+          "snippet": "Option B is incorrect because federal insurance for individual bank deposits was a reform aimed at the banking system rather than the stock market oversight described in the question.",
+          "explanation": "This explanation is inadequate because it doesn't identify what specific reform/agency provided federal insurance for bank deposits (FDIC). It's too vague and doesn't help students learn the distinction between different New Deal agencies."
+        }
+      ]
+    },
+    {
+      "id": "699cb1062db3a3826cb46625",
+      "format": "mcq",
+      "difficulty": "easy",
+      "topic": "The Constitution",
+      "learning_objective": "Explain the continuities and changes in the structure and functions of the government with the ratification of the Constitution.",
+      "overall_score": 0.55,
+      "critical_failures": 1,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "After the Articles of Confederation failed to provide a strong central government, the United States adopted a new framework in 1788. Which of the following was a major change to the government structure created by the ratification of the Constitution?",
+        "options": [],
+        "correct_answer": "D"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Option B contains a major factual error about legislative structure - it incorrectly describes the Constitution as creating a single-house legislature when it actually created a bicameral system"
+        },
+        {
+          "name": "explanation_quality",
+          "reasoning": "While the explanation addresses all options, it contains vague language about option B that fails to clearly explain the bicameral nature of the Constitution's legislature"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "The establishment of a single-house legislature to make national laws",
+          "explanation": "This is factually incorrect. The Articles of Confederation had a single-house legislature (unicameral Congress), and the Constitution created a two-house legislature (bicameral with House and Senate). The option incorrectly suggests the Constitution created a single-house legislature."
+        },
+        {
+          "dimension": "explanation_quality",
+          "snippet": "Option B is incorrect because the Constitution moved away from a single-house legislature to create a different legislative structure for making national laws.",
+          "explanation": "The explanation is vague and doesn't clearly state that the Constitution created a bicameral (two-house) legislature, missing an opportunity to provide specific factual information."
+        }
+      ]
+    },
+    {
+      "id": "699cb10b2db3a3826cb46628",
+      "format": "match",
+      "difficulty": "medium",
+      "topic": "The Red Scare",
+      "learning_objective": "Explain the causes and effects of the Red Scare after World War II.",
+      "overall_score": 0.65,
+      "critical_failures": 1,
+      "non_critical_failures": 0,
+      "question": {
+        "stem": "Match each domestic anti-communist policy or action taken during the post-World War II Red Scare with its specific historical consequence or effect on American society and civil liberties.",
+        "options": [],
+        "correct_answer": "{'a1': 'b4', 'a2': 'b2', 'a3': 'b3', 'a4': 'b1'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Contains a factual error regarding terminology - 'executive veto' is incorrect terminology"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "The passage of the McCarran Internal Security Act over President Truman's executive veto",
+          "explanation": "This contains a factual error. Presidents issue vetoes, not 'executive vetoes.' The correct term is simply 'veto' or 'presidential veto.'"
+        }
+      ]
+    },
+    {
+      "id": "699cb1122db3a3826cb4662a",
+      "format": "fill-in",
+      "difficulty": "medium",
+      "topic": "Taxation Without Representation",
+      "learning_objective": "Explain how British colonial policies regarding North America led to the Revolutionary War.",
+      "overall_score": 0.72,
+      "critical_failures": 0,
+      "non_critical_failures": 3,
+      "question": {
+        "stem": "Because the British government transitioned from a policy of lax oversight to the strict enforcement of trade regulations to address post-war financial burdens, ___1___ occurred, which led to ___2___.",
+        "options": [],
+        "correct_answer": "[{'id': '1', 'accepted_answers': ['the imposition of direct revenue-raising measures on internal colonial trade', 'the enforcement of new taxes to generate imperial revenue', 'the termination of colon"
+      },
+      "failed_dimensions": [
+        {
+          "name": "cognitive_demand",
+          "reasoning": "Question provides the complete analytical framework in the prompt, reducing student task to vocabulary matching rather than demonstrating understanding of cause-effect relationships."
+        },
+        {
+          "name": "clarity",
+          "reasoning": "Multiple acceptable answers for each blank creates ambiguity about expectations and makes consistent grading difficult."
+        },
+        {
+          "name": "difficulty_alignment",
+          "reasoning": "Extensive context provided in the prompt makes this easier than the expected medium difficulty level, requiring minimal analytical thinking."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Because the British government transitioned from a policy of lax oversight to the strict enforcement of trade regulations to address post-war financial burdens, ___1___ occurred, which led to ___2___.",
+          "explanation": "The question provides the complete causal chain in the prompt, requiring students only to fill in predetermined phrases rather than demonstrate understanding of the cause-effect relationship. This reduces cognitive demand to vocabulary matching rather than analytical thinking."
+        },
+        {
+          "dimension": "clarity",
+          "snippet": "['the imposition of direct revenue-raising measures on internal colonial trade', 'the enforcement of new taxes to generate imperial revenue', 'the termination of colonial control over their own economic policies', 'the implementation of legislative acts designed to extract wealth from the colonies']",
+          "explanation": "Multiple acceptable answers for each blank creates ambiguity about what specific knowledge is being tested and makes grading inconsistent. Students cannot determine which specific answer is expected."
+        },
+        {
+          "dimension": "difficulty_alignment",
+          "snippet": "Because the British government transitioned from a policy of lax oversight to the strict enforcement of trade regulations to address post-war financial burdens",
+          "explanation": "The question provides extensive context that essentially gives away the answer, making this easier than the expected 'medium' difficulty level. Students need minimal analysis to complete the blanks."
+        }
+      ]
+    },
+    {
+      "id": "699cb1172db3a3826cb4662f",
+      "format": "fill-in",
+      "difficulty": "hard",
+      "topic": "Taxation Without Representation",
+      "learning_objective": "Explain how British colonial policies regarding North America led to the Revolutionary War.",
+      "overall_score": 0.79,
+      "critical_failures": 0,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "Unlike the era of salutary neglect, the British government after 1763 ___1___ because ___2___, which fundamentally challenged colonial autonomy and sparked the outcry against taxation without representation.",
+        "options": [],
+        "correct_answer": "[{'id': '1', 'accepted_answers': ['shifted toward the strict enforcement of trade regulations and direct taxation', 'abandoned loose oversight to impose direct revenue-raising measures', 'replaced inf"
+      },
+      "failed_dimensions": [
+        {
+          "name": "cognitive_demand",
+          "reasoning": "While the question attempts to test causation, the heavy scaffolding with explicit mention of 'salutary neglect' and '1763' reduces it to pattern matching rather than requiring genuine analytical thinking"
+        },
+        {
+          "name": "difficulty_alignment",
+          "reasoning": "Requested hard difficulty but actual difficulty is medium due to excessive scaffolding that makes the answers more obvious than they should be for a hard-level question"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "difficulty_alignment",
+          "snippet": "Unlike the era of salutary neglect, the British government after 1763 ___1___ because ___2___",
+          "explanation": "This question is more medium difficulty than hard. While it requires understanding the policy shift, the context heavily scaffolds the answer by explicitly mentioning 'salutary neglect' and 'after 1763', making the correct responses fairly obvious rather than requiring complex analysis"
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Unlike the era of salutary neglect, the British government after 1763 ___1___ because ___2___",
+          "explanation": "The question provides too much scaffolding with explicit references to 'salutary neglect' and the timeframe, reducing cognitive demand. Students can answer correctly through pattern recognition rather than demonstrating deep understanding of causation"
+        }
+      ]
+    },
+    {
+      "id": "699cb1242db3a3826cb46634",
+      "format": "match",
+      "difficulty": "easy",
+      "topic": "1920s: Innovations in Communication and Technology",
+      "learning_objective": "Explain the causes and effects of the innovations in communication and technology in the United States over time.",
+      "overall_score": 0.65,
+      "critical_failures": 1,
+      "non_critical_failures": 0,
+      "question": {
+        "stem": "Match each innovation or technological change of the 1920s with its direct effect on American society.",
+        "options": [],
+        "correct_answer": "{'a1': 'b2', 'a2': 'b3', 'a3': 'b4', 'a4': 'b1'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Contains a factual error regarding the Model T price reduction figures, which contradicts the specific curriculum statement that must be tested accurately."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "allowing Ford to lower the Model T's price from $825 to under $300",
+          "explanation": "The curriculum context specifies the Model T price dropped from $850 to $260 by 1925, but the explanation states it dropped from $825 to under $300, which contains factual inaccuracies in both the starting and ending prices"
+        }
+      ]
+    },
+    {
+      "id": "699cb1272db3a3826cb46636",
+      "format": "mcq",
+      "difficulty": "easy",
+      "topic": "The Rise of Industrial Capitalism",
+      "learning_objective": "Explain the socioeconomic continuities and changes associated with the growth of industrial capitalism from 1865 to 1898.",
+      "overall_score": 0.79,
+      "critical_failures": 0,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "During the late nineteenth century, the rise of industrial capitalism was often defended by intellectuals who applied biological concepts to the competitive business environment. Which of the following best explains how the application of Social Darwinism influenced the growth of industrial capitalism?",
+        "options": [],
+        "correct_answer": "A"
+      },
+      "failed_dimensions": [
+        {
+          "name": "cognitive_demand",
+          "reasoning": "Question tests basic recall of Social Darwinism's definition and application rather than requiring analysis of socioeconomic changes or evaluation of historical causation."
+        },
+        {
+          "name": "difficulty_alignment",
+          "reasoning": "Question requires understanding complex ideological concepts and their historical applications, which exceeds the basic recall and comprehension expected for 'easy' difficulty level."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Which of the following best explains how the application of Social Darwinism influenced the growth of industrial capitalism?",
+          "explanation": "This is primarily a recall question testing memorization of Social Darwinism's basic definition and application. Students can answer correctly by simply remembering that Social Darwinism justified wealth concentration without demonstrating analysis, synthesis, or higher-order thinking about socioeconomic changes."
+        },
+        {
+          "dimension": "difficulty_alignment",
+          "snippet": "The entire question structure and content",
+          "explanation": "While labeled as 'easy' difficulty, this question requires understanding complex ideological concepts, their historical application, and their relationship to economic systems. This level of conceptual understanding exceeds basic recall expected for 'easy' difficulty."
+        }
+      ]
+    },
+    {
+      "id": "699cb1352db3a3826cb4663e",
+      "format": "match",
+      "difficulty": "medium",
+      "topic": "Failure of Compromise",
+      "learning_objective": "Explain the political causes of the Civil War.",
+      "overall_score": 0.65,
+      "critical_failures": 1,
+      "non_critical_failures": 0,
+      "question": {
+        "stem": "Match the political actions and developments of the 1850s that contributed to the failure of compromise to their specific consequences for the American political system.",
+        "options": [],
+        "correct_answer": "{'a1': 'b2', 'a2': 'b3', 'a3': 'b4', 'a4': 'b1'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "Content includes events outside the 1854-1856 timeframe and focuses on failure of compromise generally rather than specifically on how slavery and nativism ended the Second Party System"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "The Supreme Court's ruling in Dred Scott v. Sandford (1857) and The 1860 election of Abraham Lincoln",
+          "explanation": "These events fall outside the specified 1854-1856 timeframe for this curriculum standard"
+        },
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "Match the political actions and developments of the 1850s that contributed to the failure of compromise",
+          "explanation": "Question focuses on 'failure of compromise' broadly rather than specifically testing how slavery and nativism ended the Second Party System as required by the standard"
+        }
+      ]
+    },
+    {
+      "id": "699cb1372db3a3826cb4663f",
+      "format": "mcq",
+      "difficulty": "easy",
+      "topic": "Reagan and Conservatism",
+      "learning_objective": "Explain the causes and effects of continuing policy debates about the role of the federal government over time.",
+      "overall_score": 0.47,
+      "critical_failures": 1,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "The 1980 election of Ronald Reagan signaled a significant shift in American politics, as a diverse group of voters coalesced around a new conservative platform. Which of the following best describes the coalition that facilitated the growth of modern conservatism during the Reagan era?",
+        "options": [],
+        "correct_answer": "A"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "Content tests factual recall of Reagan coalition composition rather than the required skill of explaining causes and effects of policy debates about federal government role over time"
+        },
+        {
+          "name": "cognitive_demand",
+          "reasoning": "This is pure memorization/recall that requires no analysis, synthesis, or understanding of causation - not appropriate for AP level"
+        },
+        {
+          "name": "explanation_quality",
+          "reasoning": "Explanation simply restates the answer without providing meaningful analysis of why these groups formed a coalition or how this relates to policy debates"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "Which of the following best describes the coalition that facilitated the growth of modern conservatism during the Reagan era?",
+          "explanation": "This question tests factual recall of coalition composition rather than the required skill of explaining causes and effects of policy debates about federal government role over time"
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Which of the following best describes the coalition",
+          "explanation": "This is pure factual recall that can be answered by memorizing the curriculum statement without understanding causes, effects, or policy implications"
+        },
+        {
+          "dimension": "explanation_quality",
+          "snippet": "The correct answer is A because it identifies the specific groups, such as religious conservatives and disillusioned blue-collar workers, that united to support Reagan's new conservative platform.",
+          "explanation": "The explanation merely restates what the answer says without explaining WHY these groups coalesced or HOW this relates to policy debates about federal government role"
+        }
+      ]
+    },
+    {
+      "id": "699cb14e2db3a3826cb4664a",
+      "format": "fill-in",
+      "difficulty": "hard",
+      "topic": "Failure of Compromise",
+      "learning_objective": "Explain the political causes of the Civil War.",
+      "overall_score": 0.79,
+      "critical_failures": 0,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "Unlike the earlier period of national political cohesion, the mid-19th century failure of compromise ___1___ because ___2___.",
+        "options": [],
+        "correct_answer": "[{'id': '1', 'accepted_answers': ['eroded the broad-based national coalitions that had previously prevented regional polarization', 'dissolved the cross-regional loyalties that sustained the Second Pa"
+      },
+      "failed_dimensions": [
+        {
+          "name": "cognitive_demand",
+          "reasoning": "Question tests recall of curriculum facts rather than requiring analytical thinking, synthesis, or evaluation appropriate for AP level"
+        },
+        {
+          "name": "difficulty_alignment",
+          "reasoning": "Question is marked as 'hard' but only requires recall of curriculum content, not the complex analysis expected for hard difficulty"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Unlike the earlier period of national political cohesion, the mid-19th century failure of compromise ___1___ because ___2___.",
+          "explanation": "This is essentially a recall question testing memorization of curriculum facts rather than requiring analysis, evaluation, or synthesis. Students can fill in the blanks by remembering the standard without demonstrating understanding of causation or making connections."
+        },
+        {
+          "dimension": "difficulty_alignment",
+          "snippet": "Unlike the earlier period of national political cohesion, the mid-19th century failure of compromise ___1___ because ___2___.",
+          "explanation": "This question is marked as 'hard' difficulty but only requires recall of curriculum content. A hard question should require complex analysis, evaluation of multiple factors, or synthesis of concepts across time periods."
+        }
+      ]
+    },
+    {
+      "id": "699cb15e2db3a3826cb46652",
+      "format": "fill-in",
+      "difficulty": "hard",
+      "topic": "Continuity and Change in the Period 3",
+      "learning_objective": "Explain how the American independence movement affected society from 1754 to 1800",
+      "overall_score": 0.79,
+      "critical_failures": 0,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "In the context of Continuity and Change in the Period 3, because the Treaty of Paris (1783) secured independence and vast western lands while only requiring a non-binding recommendation for the return of Loyalist property, ___1___ occurred, which demonstrated a significant change by ___2___.",
+        "options": [],
+        "correct_answer": "[{'id': '1', 'accepted_answers': ['many state governments continued to legally and socially marginalize former British supporters', 'a persistent tension developed between state-level revolutionary po"
+      },
+      "failed_dimensions": [
+        {
+          "name": "clarity",
+          "reasoning": "Answer choices are excessively complex and verbose, making the question difficult to parse and potentially confusing for students"
+        },
+        {
+          "name": "difficulty_alignment",
+          "reasoning": "While requested as 'hard', this question exceeds typical AP difficulty levels with its complex synthesis requirements and abstract conceptual demands"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "difficulty_alignment",
+          "snippet": "multiple complex answer choices requiring synthesis of federal-state tensions, international diplomacy, and social reconciliation",
+          "explanation": "This question requires extremely high-level analysis beyond typical 'hard' difficulty, more appropriate for graduate-level study than AP"
+        },
+        {
+          "dimension": "clarity",
+          "snippet": "multiple lengthy, complex answer options with overlapping concepts",
+          "explanation": "The answer choices are excessively verbose and conceptually dense, making it difficult to distinguish between options"
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "requires students to synthesize multiple abstract concepts simultaneously",
+          "explanation": "While appropriately challenging, the cognitive load may be excessive for the fill-in format, which typically tests more focused concepts"
+        }
+      ]
+    },
+    {
+      "id": "699cb16b2db3a3826cb46657",
+      "format": "match",
+      "difficulty": "hard",
+      "topic": "Colonial Society and Culture",
+      "learning_objective": "Explain how and why the different goals and interests of European leaders and colonists affected how they viewed themselves and their relationship with Britain.",
+      "overall_score": 0.79,
+      "critical_failures": 0,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "Match the specific structural features and political practices of colonial governments to their broader consequences for colonial society and the evolving relationship with the British Crown.",
+        "options": [],
+        "correct_answer": "{'a1': 'b3', 'a2': 'b2', 'a3': 'b1', 'a4': 'b4'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "clarity",
+          "reasoning": "While generally clear, contains unnecessarily complex vocabulary that could confuse students."
+        },
+        {
+          "name": "difficulty_alignment",
+          "reasoning": "The vocabulary and conceptual complexity exceeds the requested 'hard' difficulty level, making it potentially too challenging for AP students."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "difficulty_alignment",
+          "snippet": "The constitutional arrangement allowing elected lower houses to exercise the 'power of the purse' over the salaries of royal governors",
+          "explanation": "This terminology ('power of the purse', 'constitutional arrangement') is extremely advanced and technical, beyond typical AP level vocabulary, making this harder than the requested 'hard' difficulty"
+        },
+        {
+          "dimension": "clarity",
+          "snippet": "that juxtaposed an appointed upper house with a locally elected lower house",
+          "explanation": "The word 'juxtaposed' is unnecessarily complex and could confuse students about the actual structural relationship being described"
+        }
+      ]
+    },
+    {
+      "id": "699cb1782db3a3826cb4665e",
+      "format": "msq",
+      "difficulty": "medium",
+      "topic": "Continuity and Change in the Period 3",
+      "learning_objective": "Explain how the American independence movement affected society from 1754 to 1800",
+      "overall_score": 0.65,
+      "critical_failures": 1,
+      "non_critical_failures": 0,
+      "question": {
+        "stem": "Which of the following statements accurately reflect the changes to North American political and territorial boundaries established by the Treaty of Paris (1783) during this period of transition?",
+        "options": [],
+        "correct_answer": "['B', 'C', 'E']"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Contains a factual error about French territorial holdings in North America after 1763. While the main treaty provisions tested are accurate, the explanation contains an overgeneralization about French territories."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "By 1783, France had no remaining territories on the North American mainland. They had been forced to cede their North American empire (New France) in the Treaty of Paris of 1763",
+          "explanation": "This is factually incorrect. France retained several territories in North America after 1763, including Saint Pierre and Miquelon (fishing islands off Newfoundland) and had regained some Caribbean territories. The statement overgeneralizes French territorial losses."
+        }
+      ]
+    },
+    {
+      "id": "699cb18e2db3a3826cb46669",
+      "format": "fill-in",
+      "difficulty": "medium",
+      "topic": "Technological Innovation",
+      "learning_objective": "Explain the effects of technological advances in the development of the United States over time.",
+      "overall_score": 0.79,
+      "critical_failures": 0,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "The technological innovation of steel-frame construction, durable plate glass, and passenger elevators in the 1880s achieved ___1___ by ___2___.",
+        "options": [],
+        "correct_answer": "[{'id': '1', 'accepted_answers': ['the vertical expansion of cityscapes', 'the rise of the skyscraper', 'a shift toward vertical urban growth'], 'answer_explanation': 'This blank identifies the primar"
+      },
+      "failed_dimensions": [
+        {
+          "name": "cognitive_demand",
+          "reasoning": "Question tests pure factual recall rather than AP-level historical thinking. Students can answer by memorizing the curriculum statement without demonstrating analysis of causation or understanding of broader historical significance."
+        },
+        {
+          "name": "explanation_quality",
+          "reasoning": "Explanation is minimal and merely identifies what each blank tests without providing substantive educational content or connecting to broader historical themes."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "The technological innovation of steel-frame construction, durable plate glass, and passenger elevators in the 1880s achieved ___1___ by ___2___.",
+          "explanation": "This question requires only recall of memorized facts about what these technologies achieved and how they worked. Students can answer correctly by simply remembering the curriculum statement without demonstrating understanding of causation, comparison, or broader historical analysis."
+        },
+        {
+          "dimension": "explanation_quality",
+          "snippet": "Blank 1: This blank identifies the primary effect of the technology, which was the transition from horizontal to vertical urban development in American cities. Blank 2: This blank identifies the mechanism, explaining how steel skeletons and elevators removed the physical and structural barriers that",
+          "explanation": "The explanation is too brief and merely restates what the blanks are asking for without providing substantive teaching content about why this was historically significant or how it connected to broader developments in the Gilded Age."
+        }
+      ]
+    },
+    {
+      "id": "699cb18f2db3a3826cb4666a",
+      "format": "msq",
+      "difficulty": "easy",
+      "topic": "Technological Innovation",
+      "learning_objective": "Explain the effects of technological advances in the development of the United States over time.",
+      "overall_score": 0.55,
+      "critical_failures": 1,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "Which of the following technological innovations directly contributed to the vertical growth of American cityscapes during the late 1800s?",
+        "options": [],
+        "correct_answer": "['B', 'D']"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "While the question tests the correct topic and time period, it fails to include all three technologies specified in the curriculum statement. Durable plate glass is completely omitted as an option, making this an incomplete test of the required content."
+        },
+        {
+          "name": "difficulty_alignment",
+          "reasoning": "The question was marked as 'easy' but requires understanding complex cause-and-effect relationships between multiple technologies and urban development, which exceeds basic recall/comprehension level."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "The question omits durable plate glass as an option",
+          "explanation": "The curriculum statement specifically mentions three technologies: steel-frame construction, durable plate glass, and passenger elevators. The question only includes two of these as correct answers, missing durable plate glass entirely."
+        },
+        {
+          "dimension": "difficulty_alignment",
+          "snippet": "The detailed explanation with historical context and analysis of each option",
+          "explanation": "This question was marked as 'easy' difficulty but the extensive explanation and need to understand multiple technological innovations suggests higher cognitive demand than basic recall/comprehension."
+        }
+      ]
+    },
+    {
+      "id": "699cb1902db3a3826cb4666b",
+      "format": "match",
+      "difficulty": "medium",
+      "topic": "America on the World Stage",
+      "learning_objective": "Explain how and why American foreign policy developed and expanded over time.",
+      "overall_score": 0.65,
+      "critical_failures": 1,
+      "non_critical_failures": 0,
+      "question": {
+        "stem": "Match the specific actions or events involving America on the world stage with their corresponding historical consequences or outcomes.",
+        "options": [],
+        "correct_answer": "{'a1': 'b2', 'a2': 'b3', 'a3': 'b4', 'a4': 'b1'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "While most historical facts are accurate, there is a temporal inconsistency issue with including the Monroe Doctrine (1823) in a question contextualized around 1813 events."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "The declaration of the Monroe Doctrine in response to potential European intervention in Latin America",
+          "explanation": "The Monroe Doctrine was declared in 1823, which falls outside the specified time period of 1813 and Period 4 focus. While Monroe Doctrine is part of Period 4 (1800-1848), including it in a question specifically contextualized around 1813 events creates temporal inconsistency"
+        }
+      ]
+    },
+    {
+      "id": "699cb1992db3a3826cb4666f",
+      "format": "mcq",
+      "difficulty": "easy",
+      "topic": "Causation in the Period 4",
+      "learning_objective": "Explain the extent to which politics, economics, and foreign policy promoted the development of American identity from 1800 to 1848.",
+      "overall_score": 0.55,
+      "critical_failures": 1,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "In 1823, the United States issued a foreign policy declaration that defined the Western Hemisphere as a distinct sphere of influence, separate from European political systems. Which of the following best describes the causation of the Monroe Doctrine during this period of United States history?",
+        "options": [],
+        "correct_answer": "D"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "While the Monroe Doctrine is the correct topic from the curriculum statement, the question tests causation rather than the required learning objective of explaining how foreign policy promoted American identity development"
+        },
+        {
+          "name": "cognitive_demand",
+          "reasoning": "This tests basic recall of why the Monroe Doctrine was issued rather than requiring analysis of its impact on American identity or higher-order thinking skills expected at AP level"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "Which of the following best describes the causation of the Monroe Doctrine",
+          "explanation": "The question tests causation of the Monroe Doctrine but doesn't address the learning objective of explaining how this foreign policy promoted American identity development from 1800-1848"
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Which of the following best describes the causation of the Monroe Doctrine",
+          "explanation": "This is primarily factual recall about why the Monroe Doctrine was issued, not analysis of its role in American identity development or higher-order thinking about extent/impact"
+        }
+      ]
+    },
+    {
+      "id": "699cb1ab2db3a3826cb46678",
+      "format": "match",
+      "difficulty": "medium",
+      "topic": "European Exploration in the Americas",
+      "learning_objective": "Explain the causes of exploration and conquest of the New World by various European nations",
+      "overall_score": 0.47,
+      "critical_failures": 1,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "Match the specific actions and strategies employed during the Spanish conquest of the Aztec Empire (1519\u20131521) to their direct historical consequences for European exploration and control in the Americas.",
+        "options": [],
+        "correct_answer": "{'a1': 'b3', 'a2': 'b2', 'a3': 'b4', 'a4': 'b1'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "Content tests consequences of conquest rather than causes of exploration and conquest as specified in the learning objective"
+        },
+        {
+          "name": "cognitive_demand",
+          "reasoning": "Question requires recall of historical events rather than analysis of causes of exploration and conquest"
+        },
+        {
+          "name": "distractor_quality",
+          "reasoning": "No extra definitions provided to serve as distractors, making this a simple 1:1 matching exercise without cognitive challenge"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "Match the specific actions and strategies employed during the Spanish conquest of the Aztec Empire (1519\u20131521) to their direct historical consequences",
+          "explanation": "This tests consequences of conquest rather than causes of exploration and conquest as required by the learning objective"
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Match the specific actions and strategies employed during the Spanish conquest... to their direct historical consequences",
+          "explanation": "This is primarily factual recall of what happened during conquest rather than analysis of WHY Europeans explored and conquered"
+        },
+        {
+          "dimension": "distractor_quality",
+          "snippet": "Column B definitions are all consequences with no incorrect options provided",
+          "explanation": "In matching exercises, having extra definitions serves as distractors, but all four definitions are correct matches with no additional options to create cognitive challenge"
+        }
+      ]
+    },
+    {
+      "id": "699cb1ae2db3a3826cb4667a",
+      "format": "mcq",
+      "difficulty": "hard",
+      "topic": "America on the World Stage",
+      "learning_objective": "Explain how and why American foreign policy developed and expanded over time.",
+      "overall_score": 0.55,
+      "critical_failures": 1,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "Following the Battle of Lake Erie in 1813, Commodore Oliver Hazard Perry reported, 'We have met the enemy and they are ours.' Which of the following best evaluates the significance of this victory for America on the world stage during the War of 1812?",
+        "options": [],
+        "correct_answer": "C"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Multiple distractors contain factual inaccuracies about the Battle of Lake Erie's actual historical impacts, though the correct answer and its explanation are factually accurate"
+        },
+        {
+          "name": "distractor_quality",
+          "reasoning": "While distractors are plausible in structure, they contain factual errors that make them historically inaccurate rather than representing genuine misconceptions about the actual battle's significance"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "It facilitated a significant reduction in British naval dominance across the Atlantic",
+          "explanation": "This is factually incorrect - the Battle of Lake Erie was fought on an inland lake and had no impact on British naval dominance across the Atlantic Ocean"
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "It forced the British to recognize American claims to the Oregon Territory",
+          "explanation": "This is factually incorrect - the Battle of Lake Erie had no connection to Oregon Territory disputes, which were resolved much later through different diplomatic means"
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "It resulted in a major shift in national political parties, causing the Federalists to support the expansion of federal power to maintain a permanent standing navy",
+          "explanation": "This is factually incorrect - the Battle of Lake Erie did not cause the Federalist Party to change its fundamental positions on federal power and military expansion"
+        }
+      ]
+    },
+    {
+      "id": "699cb1b22db3a3826cb4667d",
+      "format": "match",
+      "difficulty": "medium",
+      "topic": "A Changing Economy",
+      "learning_objective": "Explain the causes and effects of economic and technological change over time",
+      "overall_score": 0.65,
+      "critical_failures": 1,
+      "non_critical_failures": 0,
+      "question": {
+        "stem": "Match the specific economic cause or policy decision from the late 20th and early 21st centuries to its direct effect on the American workforce and income distribution.",
+        "options": [],
+        "correct_answer": "{'a1': 'b3', 'a2': 'b1', 'a3': 'b4', 'a4': 'b2'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "While the content tests the correct economic concepts of wage stagnation and inequality, it extends beyond the specified 1970s-1990s timeframe into the early 21st century, creating a temporal mismatch with the curriculum standard"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "late 20th and early 21st centuries",
+          "explanation": "The curriculum context specifies 1970s-1990s time period, but the question extends into early 21st century, creating a temporal mismatch with the specified standard"
+        }
+      ]
+    },
+    {
+      "id": "699cb1b72db3a3826cb4667f",
+      "format": "match",
+      "difficulty": "hard",
+      "topic": "A Changing Economy",
+      "learning_objective": "Explain the causes and effects of economic and technological change over time",
+      "overall_score": 0.55,
+      "critical_failures": 1,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "Match the specific historical causes related to the changing American economy after 1980 to their direct effects on the working and middle classes.",
+        "options": [],
+        "correct_answer": "{'a1': 'b1', 'a2': 'b3', 'a3': 'b2', 'a4': 'b4'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Multiple factual errors in the answer key, particularly incorrect matches between globalization and productivity-wage decoupling, and union decline with middle-class cost-of-living issues."
+        },
+        {
+          "name": "distractor_quality",
+          "reasoning": "Some definitions are ambiguous and could reasonably match multiple causes, reducing the clarity of correct matches and creating confusion."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "{'a1': 'b1', 'a2': 'b3', 'a3': 'b2', 'a4': 'b4'}",
+          "explanation": "The match a3-b2 is factually incorrect. Globalization/free trade agreements primarily led to job losses and wage competition, not specifically to 'decoupling of worker productivity from inflation-adjusted earnings.' The productivity-wage gap was more directly caused by deindustrialization (a1) and union decline (a4)."
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "The match a4-b4 connecting union decline to 'Limited the ability of middle-class employees to secure cost-of-living adjustments'",
+          "explanation": "This match is imprecise. Union decline primarily affected working-class industrial workers more than middle-class employees. The description b4 about middle-class cost-of-living adjustments better matches the broader economic effects of supply-side policies or deindustrialization."
+        },
+        {
+          "dimension": "distractor_quality",
+          "snippet": "b2. Reduced the domestic bargaining power of laborers, resulting in a decoupling of worker productivity from inflation-adjusted earnings",
+          "explanation": "This definition could plausibly match multiple causes (union decline, globalization, or deindustrialization all reduced bargaining power), making it ambiguous which specific cause it should match to."
+        }
+      ]
+    },
+    {
+      "id": "699cb1b92db3a3826cb46680",
+      "format": "fill-in",
+      "difficulty": "easy",
+      "topic": "European Exploration in the Americas",
+      "learning_objective": "Explain the causes of exploration and conquest of the New World by various European nations",
+      "overall_score": 0.55,
+      "critical_failures": 1,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "During the era of European exploration in the Americas, Hern\u00e1n Cort\u00e9s achieved ___1___ by ___2___.",
+        "options": [],
+        "correct_answer": "[{'id': '1', 'accepted_answers': ['the conquest of a major indigenous empire', 'the overthrow of a powerful indigenous civilization', 'the defeat of a large native empire'], 'answer_explanation': \"Thi"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "The question tests methods and outcomes of conquest rather than the causes of exploration and conquest as required by the learning objective"
+        },
+        {
+          "name": "cognitive_demand",
+          "reasoning": "This is a straightforward recall question that can be answered through memorization without understanding the broader concepts of causation in European exploration"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "During the era of European exploration in the Americas, Hern\u00e1n Cort\u00e9s achieved ___1___ by ___2___",
+          "explanation": "This question tests what Cort\u00e9s achieved and how he did it, but the learning objective requires explaining the causes/motivations for exploration and conquest (search for wealth, competition, spreading Christianity), not the methods or outcomes"
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Hern\u00e1n Cort\u00e9s achieved ___1___ by ___2___",
+          "explanation": "This is pure factual recall testing memorization of what Cort\u00e9s did and how he did it, rather than requiring analysis of causation, comparison, or other AP-level thinking skills"
+        }
+      ]
+    },
+    {
+      "id": "699cb1bf2db3a3826cb46683",
+      "format": "fill-in",
+      "difficulty": "medium",
+      "topic": "Immigration and Migration in the Gilded Age",
+      "learning_objective": "Explain how cultural and economic factors affected migration patterns over time.",
+      "overall_score": 0.55,
+      "critical_failures": 1,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "Because Chinese immigrants became a primary labor force for the construction of the transcontinental railroad and other Western industries during the Gilded Age, ___1___ occurred, which led to ___2___.",
+        "options": [],
+        "correct_answer": "[{'id': '1', 'accepted_answers': ['heightened economic competition and racial resentment among white laborers', 'increased social tension and labor market rivalry with native-born workers', 'growing a"
+      },
+      "failed_dimensions": [
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "The question fundamentally misaligns with the learning objective. It tests consequences of Chinese immigration rather than factors that affected migration patterns. Additionally, it uses 'Gilded Age' timeframe instead of the specified 1840s-1868 period."
+        },
+        {
+          "name": "cognitive_demand",
+          "reasoning": "The question requires only recall of predictable cause-and-effect relationships rather than analysis or synthesis. The 'because...occurred, which led to...' structure makes this a straightforward recall question."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "Because Chinese immigrants became a primary labor force for the construction of the transcontinental railroad and other Western industries during the Gilded Age, ___1___ occurred, which led to ___2___.",
+          "explanation": "This question tests the consequences of Chinese immigration (what happened after they arrived) rather than testing how cultural and economic factors affected migration patterns (why they came). The learning objective requires explaining factors that influenced migration, not the results of migration."
+        },
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "during the Gilded Age",
+          "explanation": "The specified time period is 1840s-1868, but 'Gilded Age' typically refers to 1870s-1900. This creates a temporal mismatch with the curriculum context."
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Because Chinese immigrants became a primary labor force... ___1___ occurred, which led to ___2___",
+          "explanation": "The question structure provides the cause and asks for predictable effects, requiring only recall of standard consequences rather than analysis of migration factors. This is essentially a cause-and-effect recall question."
+        }
+      ]
+    },
+    {
+      "id": "699cb1cd2db3a3826cb4668a",
+      "format": "match",
+      "difficulty": "hard",
+      "topic": "Immigration and Migration in the Gilded Age",
+      "learning_objective": "Explain how cultural and economic factors affected migration patterns over time.",
+      "overall_score": 0.65,
+      "critical_failures": 1,
+      "non_critical_failures": 0,
+      "question": {
+        "stem": "Match the specific economic and cultural factors of the Gilded Age to their direct consequences on Chinese immigration and migration patterns in the United States.",
+        "options": [],
+        "correct_answer": "{'a1': 'b4', 'a2': 'b2', 'a3': 'b3', 'a4': 'b1'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Multiple chronological errors place key content outside the specified 1840s-1868 time period, particularly the 1882 Chinese Exclusion Act which is a major factual misalignment"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "The post-Civil War expansion of industrial and agricultural markets which relied on a mobile, low-wage workforce",
+          "explanation": "This term extends beyond the specified time period of 1840s-1868, as the Civil War ended in 1865 and significant post-war expansion occurred after 1868"
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "Culminated in the 1882 Chinese Exclusion Act",
+          "explanation": "The 1882 Chinese Exclusion Act falls well outside the specified time period of 1840s-1868, representing a significant chronological error for this curriculum context"
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "the Burlingame Treaty and private labor contractors actively facilitated a steady flow of cheap labor",
+          "explanation": "The Burlingame Treaty was signed in 1868, which is at the very end of the specified time period, and its effects were primarily felt after 1868"
+        }
+      ]
+    },
+    {
+      "id": "699cb1d42db3a3826cb4668d",
+      "format": "fill-in",
+      "difficulty": "medium",
+      "topic": "Sectional Conflict: Regional Differences",
+      "learning_objective": "Explain the effects of immigration from various parts of the world on American culture from 1844 to 1877.",
+      "overall_score": 0.25,
+      "critical_failures": 2,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "Because substantial numbers of international migrants from Ireland and Germany arrived during the era of sectional conflict, ___1___ occurred, which led to ___2___.",
+        "options": [],
+        "correct_answer": "[{'id': '1', 'accepted_answers': ['the formation of concentrated ethnic enclaves in Northern and Midwestern regions', 'the establishment of specific neighborhoods where migrants clustered together', '"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Contains multiple factual errors about the relationship between immigration and sectional conflict"
+        },
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "The content incorrectly connects immigration to sectional conflict, which is not part of the specified curriculum standard about immigration's effects on American culture"
+        },
+        {
+          "name": "cognitive_demand",
+          "reasoning": "The question forces students into a false analytical framework rather than testing genuine understanding"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "Because substantial numbers of international migrants from Ireland and Germany arrived during the era of sectional conflict",
+          "explanation": "The question incorrectly frames immigration as being causally connected to sectional conflict. The curriculum standard focuses on immigration's effects on American culture generally, not specifically on sectional tensions"
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "the preservation of distinct languages and customs that intensified regional differences... that increased the social gap between the North and South",
+          "explanation": "This is historically inaccurate. Irish and German immigration primarily affected Northern and Midwestern cities and did not significantly contribute to North-South sectional tensions, which were primarily about slavery and economic differences"
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "the creation of a pluralistic society that further distinguished the North from the Southern region",
+          "explanation": "While immigration did create more diversity in the North, framing this as a cause of sectional conflict is misleading. Sectional conflict was primarily driven by slavery and economic differences, not immigration patterns"
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Because substantial numbers of international migrants from Ireland and Germany arrived during the era of sectional conflict, ___1___ occurred, which led to ___2___",
+          "explanation": "The question structure provides a false causal framework that students must accept to answer correctly, reducing this to recall of predetermined connections rather than genuine analysis"
+        }
+      ]
+    },
+    {
+      "id": "699cb1de2db3a3826cb46690",
+      "format": "match",
+      "difficulty": "hard",
+      "topic": "Sectional Conflict: Regional Differences",
+      "learning_objective": "Explain the effects of immigration from various parts of the world on American culture from 1844 to 1877.",
+      "overall_score": 0.25,
+      "critical_failures": 2,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "Match the specific patterns of international migration between 1844 and 1877 to their consequences for the developing sectional conflict and regional differences in the United States.",
+        "options": [],
+        "correct_answer": "{'a1': 'b1', 'a2': 'b3', 'a3': 'b4', 'a4': 'b2'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Contains factual inaccuracies regarding German Forty-Eighters' primary motivations and timeline issues with Chinese railroad labor"
+        },
+        {
+          "name": "curriculum_alignment",
+          "reasoning": "The content tests political effects on sectional conflict rather than cultural effects and preservation of languages/customs as specified in the curriculum standard"
+        },
+        {
+          "name": "difficulty_alignment",
+          "reasoning": "The question is extremely difficult, requiring very sophisticated understanding that exceeds typical 'hard' level expectations"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "curriculum_alignment",
+          "snippet": "Match the specific patterns of international migration between 1844 and 1877 to their consequences for the developing sectional conflict and regional differences",
+          "explanation": "The question focuses on sectional conflict and political consequences rather than effects on American culture and preservation of languages/customs as specified in the curriculum standard"
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "The settlement of German 'Forty-Eighters' in the Midwest, who integrated their anti-authoritarian and anti-slavery values into their new communities",
+          "explanation": "While some Forty-Eighters were anti-slavery, many were primarily focused on democratic reforms and labor issues rather than specifically anti-slavery activism, making this characterization overly broad"
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "The formation of resilient Chinese cultural communities in the West while providing essential labor for mineral extraction and the transcontinental railroad",
+          "explanation": "The transcontinental railroad was primarily constructed in the 1860s, and major Chinese immigration for railroad work occurred later in the period, making this less representative of the entire 1844-1877 timeframe"
+        },
+        {
+          "dimension": "difficulty_alignment",
+          "snippet": "entire question structure",
+          "explanation": "The question requires very sophisticated understanding of complex political relationships and sectional dynamics that goes beyond typical 'hard' level expectations, making it extremely difficult rather than appropriately hard"
+        }
+      ]
+    },
+    {
+      "id": "699cb1fa2db3a3826cb46696",
+      "format": "mcq",
+      "difficulty": "easy",
+      "topic": "Colonial Society and Culture",
+      "learning_objective": "Explain how and why the different goals and interests of European leaders and colonists affected how they viewed themselves and their relationship with Britain.",
+      "overall_score": 0.55,
+      "critical_failures": 1,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "By the mid-1700s, the British colonies in North America were shaped by a growing interest in individual rights and the practice of local governance. Which factor most directly influenced the development of a colonial culture that resisted British imperial control?",
+        "options": [],
+        "correct_answer": "D"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "The time period reference 'mid-1700s' does not align with the specified curriculum time period of 1763-1776"
+        },
+        {
+          "name": "cognitive_demand",
+          "reasoning": "The question requires only recall of curriculum factors rather than analysis or explanation of how/why different goals affected colonial-British relationships"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "By the mid-1700s",
+          "explanation": "The curriculum context specifies the time period as 1763-1776, but the question uses 'mid-1700s' which typically refers to around 1750, predating the specified period by over a decade"
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Which factor most directly influenced the development of a colonial culture that resisted British imperial control?",
+          "explanation": "This is essentially asking students to recall which factor from the curriculum statement influenced colonial resistance, rather than requiring analysis of how or why different goals and interests affected colonial-British relationships"
+        }
+      ]
+    },
+    {
+      "id": "699cb20d2db3a3826cb4669e",
+      "format": "match",
+      "difficulty": "hard",
+      "topic": "Comparison in the Period 7",
+      "learning_objective": "Compare the relative significance of the major events of the first half of the 20th century in shaping American identity.",
+      "overall_score": 0.79,
+      "critical_failures": 0,
+      "non_critical_failures": 2,
+      "question": {
+        "stem": "Match the specific causal factors of industrial and social mobilization during Period 7 to their long-term effects on American identity and the national economy, focusing on the comparison between the two World Wars.",
+        "options": [],
+        "correct_answer": "{'a1': 'b2', 'a2': 'b3', 'a3': 'b1', 'a4': 'b4'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "cognitive_demand",
+          "reasoning": "While matching format requires some analysis, the terms are largely factual statements that can be matched through recognition rather than requiring true evaluation of relative significance or complex analysis expected for AP-level thinking"
+        },
+        {
+          "name": "difficulty_alignment",
+          "reasoning": "Requested 'hard' difficulty but the question largely presents factual information that students can match through recognition rather than requiring the complex evaluation and analysis expected for hard-level questions"
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "difficulty_alignment",
+          "snippet": "The federal government increased spending to approximately five times the percentage of GDP during WWII compared to the WWI mobilization effort",
+          "explanation": "This term directly states the curriculum fact rather than requiring students to analyze or evaluate it. For 'hard' difficulty, students should need to work with the concept rather than just recognize a stated fact"
+        },
+        {
+          "dimension": "cognitive_demand",
+          "snippet": "Instructions ask to 'Match the specific causal factors... to their long-term effects'",
+          "explanation": "While the matching requires some analysis, the terms are essentially factual statements that can be matched through recognition rather than requiring true evaluation or complex analysis of relative significance"
+        }
+      ]
+    },
+    {
+      "id": "699cb21b2db3a3826cb466a4",
+      "format": "msq",
+      "difficulty": "hard",
+      "topic": "European Colonization",
+      "learning_objective": "Explain how and why various European colonies developed and expanded from 1607 to 1754.",
+      "overall_score": 0.55,
+      "critical_failures": 1,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "Which of the following statements accurately analyze the role of joint-stock companies in the development and expansion of European colonization in North America between 1607 and 1754?",
+        "options": [],
+        "correct_answer": "['A', 'D']"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Contains factual errors about English monarchy's financial capacity and oversimplifies Virginia Company's goals."
+        },
+        {
+          "name": "explanation_quality",
+          "reasoning": "While comprehensive, contains factual errors and terminology inconsistencies that undermine the educational value. The explanation is detailed but teaches some incorrect information."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "Unlike the Spanish Crown, which directly funded many of its early expeditions, the English monarchy (starting with King James I) lacked the liquid capital to fund risky overseas ventures.",
+          "explanation": "This is historically inaccurate. The English monarchy had significant resources and did fund various ventures. The use of joint-stock companies was more about risk distribution and private investment opportunities than the crown 'lacking liquid capital.'"
+        },
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "its primary goal was finding gold or a passage to Asia",
+          "explanation": "While finding a passage to Asia was a goal, the Virginia Company's charter and activities focused more broadly on establishing profitable settlements, extracting resources, and developing trade. The phrasing oversimplifies their complex economic objectives."
+        },
+        {
+          "dimension": "explanation_quality",
+          "snippet": "They provided a mechanism for private individuals to pool capital, which reduced the financial burden on the monarch while distributing the economic hazards of overseas ventures among many shareholders.",
+          "explanation": "Option A in the question uses 'hazards' while the explanation uses 'risk' - inconsistent terminology that could confuse students about whether these are the same concept."
+        }
+      ]
+    },
+    {
+      "id": "699cb23c2db3a3826cb466ae",
+      "format": "match",
+      "difficulty": "hard",
+      "topic": "Reform in the Gilded Age",
+      "learning_objective": "Explain how different reform movements responded to the rise of industrial capitalism in the Gilded Age.",
+      "overall_score": 0.55,
+      "critical_failures": 1,
+      "non_critical_failures": 1,
+      "question": {
+        "stem": "Match the specific reform-oriented action or movement of the Gilded Age with its significant historical consequence or outcome.",
+        "options": [],
+        "correct_answer": "{'a1': 'b2', 'a2': 'b4', 'a3': 'b1', 'a4': 'b3'}"
+      },
+      "failed_dimensions": [
+        {
+          "name": "factual_accuracy",
+          "reasoning": "Contains factual oversimplification about causes of agricultural price decline that could mislead students about the complexity of Gilded Age economic factors."
+        },
+        {
+          "name": "clarity",
+          "reasoning": "Contains unclear phrasing that could confuse students about the specific aspects of historical developments being referenced."
+        }
+      ],
+      "issues": [
+        {
+          "dimension": "factual_accuracy",
+          "snippet": "Improvements in mechanization helped agricultural production increase substantially, leading to a significant decline in food prices",
+          "explanation": "This statement oversimplifies the causes of agricultural price decline in the Gilded Age. While mechanization contributed, the primary causes were overproduction, international competition, and deflationary monetary policy, not just mechanization alone."
+        },
+        {
+          "dimension": "clarity",
+          "snippet": "their dependence on the evolving railroad system",
+          "explanation": "The phrase 'evolving railroad system' is vague and unclear. It should specify what aspect of railroad evolution (monopolistic practices, rate discrimination, etc.) farmers were responding to."
+        }
+      ]
+    }
+  ]
+}

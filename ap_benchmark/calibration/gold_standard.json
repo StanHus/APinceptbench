@@ -1,0 +1,463 @@
+{
+  "version": "1.1.0",
+  "description": "Gold standard calibration set for AP Benchmark evaluator validation",
+  "pass_threshold": 0.85,
+  "examples": [
+    {
+      "id": "good_001",
+      "expected_pass": true,
+      "expected_score_range": [0.85, 1.0],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP USH Period 3: The American Revolution",
+      "question": "Which of the following best explains why colonial leaders shifted from seeking reconciliation with Britain to pursuing independence by 1776?",
+      "answer": "C",
+      "answer_options": [
+        {"key": "A", "text": "The colonies lacked the military resources to challenge British forces"},
+        {"key": "B", "text": "European nations refused to support any colonial resistance movement"},
+        {"key": "C", "text": "British policies increasingly appeared designed to subordinate colonial autonomy permanently"},
+        {"key": "D", "text": "Colonial merchants benefited from trade restrictions imposed by Parliament"}
+      ],
+      "explanation": "By 1776, colonial leaders concluded that British policies like the Coercive Acts (1774) and the rejection of the Olive Branch Petition demonstrated Parliament's intent to permanently limit colonial self-governance. This pattern of escalating restrictions shifted elite opinion from reform within the empire to separation. Options A and B misrepresent colonial capabilities and foreign relations, while D contradicts the economic grievances that motivated resistance."
+    },
+    {
+      "id": "good_002",
+      "expected_pass": true,
+      "expected_score_range": [0.85, 1.0],
+      "type": "mcq",
+      "difficulty": "hard",
+      "curriculum_info": "AP USH Period 5: Civil War and Reconstruction",
+      "question": "How did the Compromise of 1877 fundamentally reshape the relationship between the federal government and Southern states?",
+      "answer": "B",
+      "answer_options": [
+        {"key": "A", "text": "It established new federal agencies to protect African American voting rights"},
+        {"key": "B", "text": "It effectively ended federal intervention in Southern race relations in exchange for resolving the disputed presidential election"},
+        {"key": "C", "text": "It required Southern states to ratify the Fifteenth Amendment before rejoining the Union"},
+        {"key": "D", "text": "It mandated integrated public schools throughout the former Confederacy"}
+      ],
+      "explanation": "The Compromise of 1877 resolved the disputed 1876 election by awarding the presidency to Hayes in exchange for withdrawing federal troops from the South. This bargain effectively ended Reconstruction and allowed Southern states to implement Jim Crow laws without federal interference, fundamentally altering federal-state relations regarding civil rights enforcement."
+    },
+    {
+      "id": "good_003",
+      "expected_pass": true,
+      "expected_score_range": [0.85, 1.0],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP World History: Unit 4 - Maritime Empires",
+      "question": "What was the primary economic motivation behind Portuguese exploration along the African coast in the 15th century?",
+      "answer": "A",
+      "answer_options": [
+        {"key": "A", "text": "Establishing direct trade routes to bypass Muslim middlemen controlling overland routes to Asia"},
+        {"key": "B", "text": "Discovering gold deposits rumored to exist in sub-Saharan Africa"},
+        {"key": "C", "text": "Finding new agricultural lands to grow cash crops for European markets"},
+        {"key": "D", "text": "Recruiting soldiers for the Reconquista from African kingdoms"}
+      ],
+      "explanation": "Portuguese exploration was primarily driven by the desire to establish maritime routes directly to Asian spice sources, bypassing the Ottoman-controlled overland trade routes and their associated costs. While gold was a secondary interest, the spice trade represented far greater profit potential. Prince Henry the Navigator specifically directed expeditions with this commercial goal in mind."
+    },
+    {
+      "id": "good_004",
+      "expected_pass": true,
+      "expected_score_range": [0.85, 1.0],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP Government: Federalism",
+      "question": "Which Supreme Court case established the principle of implied powers, significantly expanding federal authority?",
+      "answer": "D",
+      "answer_options": [
+        {"key": "A", "text": "Marbury v. Madison (1803)"},
+        {"key": "B", "text": "Gibbons v. Ogden (1824)"},
+        {"key": "C", "text": "Dred Scott v. Sandford (1857)"},
+        {"key": "D", "text": "McCulloch v. Maryland (1819)"}
+      ],
+      "explanation": "McCulloch v. Maryland (1819) established the doctrine of implied powers through Chief Justice Marshall's interpretation of the Necessary and Proper Clause. The Court ruled that Congress could create a national bank even though this power was not explicitly enumerated in the Constitution, arguing that implied powers were constitutional if they supported enumerated powers. This decision fundamentally shaped the balance of federal-state power."
+    },
+    {
+      "id": "good_005",
+      "expected_pass": true,
+      "expected_score_range": [0.85, 1.0],
+      "type": "mcq",
+      "difficulty": "hard",
+      "curriculum_info": "AP European History: World War I",
+      "question": "Which factor most directly explains the failure of the Schlieffen Plan in 1914?",
+      "answer": "C",
+      "answer_options": [
+        {"key": "A", "text": "British naval blockades prevented German resupply"},
+        {"key": "B", "text": "French defensive fortifications proved impenetrable"},
+        {"key": "C", "text": "German forces were diverted to address the unexpectedly rapid Russian mobilization"},
+        {"key": "D", "text": "Belgian neutrality was guaranteed by a treaty that Germany honored"}
+      ],
+      "explanation": "The Schlieffen Plan assumed France could be defeated quickly before Russia fully mobilized, allowing German forces to then redeploy eastward. However, Russia mobilized faster than expected, forcing Germany to divert troops to the Eastern Front. This weakened the western offensive, contributing to the stalemate on the Western Front. The plan's rigid timetable could not adapt to these unexpected circumstances."
+    },
+    {
+      "id": "good_006",
+      "expected_pass": true,
+      "expected_score_range": [0.85, 1.0],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP Human Geography: Population and Migration",
+      "question": "How does the demographic transition model explain the relationship between industrialization and population growth?",
+      "answer": "B",
+      "answer_options": [
+        {"key": "A", "text": "Industrial societies experience consistent population growth due to improved food production"},
+        {"key": "B", "text": "Industrialization initially causes population growth as death rates fall before birth rates decline"},
+        {"key": "C", "text": "Pre-industrial societies have higher population growth than industrial societies"},
+        {"key": "D", "text": "Population remains stable throughout all stages of economic development"}
+      ],
+      "explanation": "The demographic transition model shows that industrialization triggers a sequence: first, death rates fall due to improved sanitation, medicine, and food supply, while birth rates remain high. This creates rapid population growth (Stage 2). Later, as societies further develop, birth rates also decline due to urbanization, education, and changing family economics (Stage 3), eventually leading to population stabilization."
+    },
+    {
+      "id": "good_007",
+      "expected_pass": true,
+      "expected_score_range": [0.85, 1.0],
+      "type": "mcq",
+      "difficulty": "hard",
+      "curriculum_info": "AP USH Period 7: The Great Depression",
+      "question": "Which New Deal program most significantly altered the relationship between the federal government and individual citizens?",
+      "answer": "A",
+      "answer_options": [
+        {"key": "A", "text": "Social Security, which established direct federal benefits to elderly and disabled Americans"},
+        {"key": "B", "text": "The Civilian Conservation Corps, which provided temporary employment in conservation projects"},
+        {"key": "C", "text": "The National Recovery Administration, which set industry codes and prices"},
+        {"key": "D", "text": "The Federal Deposit Insurance Corporation, which protected bank deposits"}
+      ],
+      "explanation": "Social Security fundamentally transformed the federal government's role by creating a permanent system of direct payments from the government to citizens. Unlike temporary relief programs or business regulations, Social Security established an ongoing entitlement relationship between individuals and the federal government that persists today, marking a permanent expansion of the welfare state."
+    },
+    {
+      "id": "good_008",
+      "expected_pass": true,
+      "expected_score_range": [0.85, 1.0],
+      "type": "msq",
+      "difficulty": "medium",
+      "curriculum_info": "AP World History: Imperialism",
+      "question": "Which of the following were motivations for European imperialism in Africa during the late 19th century? Select all that apply.",
+      "answer": ["A", "C", "D"],
+      "answer_options": [
+        {"key": "A", "text": "Access to raw materials such as rubber, copper, and diamonds"},
+        {"key": "B", "text": "Religious persecution of European Christians in African kingdoms"},
+        {"key": "C", "text": "Strategic competition among European powers for territorial control"},
+        {"key": "D", "text": "Beliefs in European cultural and racial superiority"},
+        {"key": "E", "text": "Defense against African military expansion into Europe"}
+      ],
+      "explanation": "European imperialism in Africa was driven by multiple factors: economic interests in raw materials (A), strategic rivalry during the 'Scramble for Africa' (C), and ideological justifications rooted in Social Darwinism and the 'civilizing mission' (D). Options B and E are historically inaccurate - there was no widespread persecution of European Christians in Africa, nor any African military threat to Europe."
+    },
+    {
+      "id": "good_009",
+      "expected_pass": true,
+      "expected_score_range": [0.85, 1.0],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP Government: Civil Liberties",
+      "question": "The Supreme Court's 'incorporation doctrine' has primarily served to:",
+      "answer": "C",
+      "answer_options": [
+        {"key": "A", "text": "Limit congressional power over interstate commerce"},
+        {"key": "B", "text": "Expand presidential authority in foreign affairs"},
+        {"key": "C", "text": "Apply Bill of Rights protections against state governments"},
+        {"key": "D", "text": "Establish judicial review of legislative acts"}
+      ],
+      "explanation": "The incorporation doctrine, developed through a series of Supreme Court cases beginning with Gitlow v. New York (1925), uses the Fourteenth Amendment's Due Process Clause to apply Bill of Rights protections against state and local governments. Originally, these protections only limited the federal government. Incorporation has been crucial for establishing uniform civil liberties standards nationwide."
+    },
+    {
+      "id": "good_010",
+      "expected_pass": true,
+      "expected_score_range": [0.85, 1.0],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP European History: Enlightenment",
+      "question": "Which Enlightenment concept most directly influenced the American and French revolutionary ideals of natural rights?",
+      "answer": "B",
+      "answer_options": [
+        {"key": "A", "text": "Montesquieu's theory of separation of powers"},
+        {"key": "B", "text": "Locke's argument that government derives legitimacy from the consent of the governed"},
+        {"key": "C", "text": "Voltaire's advocacy for religious tolerance"},
+        {"key": "D", "text": "Rousseau's concept of the general will"}
+      ],
+      "explanation": "John Locke's social contract theory argued that individuals possess natural rights (life, liberty, property) and that government's legitimacy depends on protecting these rights with the consent of the governed. This directly influenced both the Declaration of Independence's assertion of 'unalienable rights' and the French Declaration of the Rights of Man. While other thinkers influenced revolutionary thought, Locke's framework most directly shaped natural rights doctrine."
+    },
+    {
+      "id": "bad_001",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP USH Period 3",
+      "question": "What year did the Declaration of Independence get signed?",
+      "answer": "B",
+      "answer_options": [
+        {"key": "A", "text": "1774"},
+        {"key": "B", "text": "1776"},
+        {"key": "C", "text": "1778"},
+        {"key": "D", "text": "1781"}
+      ],
+      "explanation": "The Declaration of Independence was signed in 1776.",
+      "expected_failures": ["cognitive_demand"],
+      "failure_reason": "Recall-only question - just asks for a date without any analysis"
+    },
+    {
+      "id": "bad_002",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP USH Period 5",
+      "question": "What was the main cause of the Civil War?",
+      "answer": "C",
+      "answer_options": [
+        {"key": "A", "text": "States rights were completely ignored by the federal government"},
+        {"key": "B", "text": "The North was totally opposed to any compromise"},
+        {"key": "C", "text": "Slavery and its expansion into new territories"},
+        {"key": "D", "text": "All Southern states immediately seceded after Lincoln's election"}
+      ],
+      "explanation": "Slavery was the main cause.",
+      "expected_failures": ["distractor_quality", "explanation_quality"],
+      "failure_reason": "Distractors contain absolute language ('completely', 'totally', 'All', 'immediately'); explanation is too brief"
+    },
+    {
+      "id": "bad_003",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP World History",
+      "question": "Who was the first emperor of China?",
+      "answer": "A",
+      "answer_options": [
+        {"key": "A", "text": "Qin Shi Huang"},
+        {"key": "B", "text": "Han Wudi"},
+        {"key": "C", "text": "Tang Taizong"},
+        {"key": "D", "text": "Kublai Khan"}
+      ],
+      "explanation": "Qin Shi Huang was the first emperor.",
+      "expected_failures": ["cognitive_demand", "explanation_quality"],
+      "failure_reason": "Recall-only question; explanation lacks depth"
+    },
+    {
+      "id": "bad_004",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "easy",
+      "curriculum_info": "AP USH Period 4",
+      "question": "The Monroe Doctrine stated that:",
+      "answer": "B",
+      "answer_options": [
+        {"key": "A", "text": "European powers could never again colonize anywhere"},
+        {"key": "B", "text": "The Western Hemisphere was closed to further European colonization"},
+        {"key": "C", "text": "All European nations must leave North America immediately"},
+        {"key": "D", "text": "The US would totally control all of Latin America"}
+      ],
+      "explanation": "The Monroe Doctrine was a foreign policy statement.",
+      "expected_failures": ["distractor_quality", "explanation_quality"],
+      "failure_reason": "Absolute language in options A, C, D; explanation is minimal"
+    },
+    {
+      "id": "bad_005",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.84],
+      "type": "msq",
+      "difficulty": "medium",
+      "curriculum_info": "AP Government",
+      "question": "Which is a power of Congress?",
+      "answer": ["A"],
+      "answer_options": [
+        {"key": "A", "text": "Declaring war"},
+        {"key": "B", "text": "Appointing Supreme Court justices"},
+        {"key": "C", "text": "Negotiating treaties"},
+        {"key": "D", "text": "Issuing executive orders"}
+      ],
+      "explanation": "Congress can declare war.",
+      "expected_failures": ["msq_wrong_option_count", "msq_wrong_correct_count"],
+      "failure_reason": "MSQ must have 5 options and 2-3 correct answers"
+    },
+    {
+      "id": "bad_006",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP European History",
+      "question": "When did World War I begin?",
+      "answer": "C",
+      "answer_options": [
+        {"key": "A", "text": "1912"},
+        {"key": "B", "text": "1913"},
+        {"key": "C", "text": "1914"},
+        {"key": "D", "text": "1915"}
+      ],
+      "explanation": "WWI started in 1914.",
+      "expected_failures": ["cognitive_demand", "explanation_quality"],
+      "failure_reason": "Pure recall question asking for date; explanation is one sentence"
+    },
+    {
+      "id": "bad_007",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "hard",
+      "curriculum_info": "AP USH Period 8",
+      "question": "The Cold War was primarily a conflict between:",
+      "answer": "A",
+      "answer_options": [
+        {"key": "A", "text": "The United States and Soviet Union"},
+        {"key": "B", "text": "The United States and China"},
+        {"key": "C", "text": "Britain and France"},
+        {"key": "D", "text": "Germany and Japan"}
+      ],
+      "explanation": "The US and USSR were the main Cold War powers. This is obvious.",
+      "expected_failures": ["cognitive_demand", "difficulty_alignment"],
+      "failure_reason": "Too easy for 'hard' difficulty; requires no analysis"
+    },
+    {
+      "id": "bad_008",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP Human Geography",
+      "question": "What is the capital of France?",
+      "answer": "B",
+      "answer_options": [
+        {"key": "A", "text": "London"},
+        {"key": "B", "text": "Paris"},
+        {"key": "C", "text": "Berlin"},
+        {"key": "D", "text": "Madrid"}
+      ],
+      "explanation": "Paris is the capital city of France.",
+      "expected_failures": ["cognitive_demand", "curriculum_alignment"],
+      "failure_reason": "Not AP-level content; pure factual recall"
+    },
+    {
+      "id": "bad_009",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP USH Period 6",
+      "question": "Which president was assassinated in 1901?",
+      "answer": "C",
+      "answer_options": [
+        {"key": "A", "text": "Grover Cleveland"},
+        {"key": "B", "text": "Benjamin Harrison"},
+        {"key": "C", "text": "William McKinley"},
+        {"key": "D", "text": "Theodore Roosevelt"}
+      ],
+      "explanation": "McKinley was shot.",
+      "expected_failures": ["cognitive_demand", "explanation_quality"],
+      "failure_reason": "Recall-only question; explanation is too brief"
+    },
+    {
+      "id": "bad_010",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP World History: Decolonization",
+      "question": "India gained independence from Britain in what year?",
+      "answer": "B",
+      "answer_options": [
+        {"key": "A", "text": "1945"},
+        {"key": "B", "text": "1947"},
+        {"key": "C", "text": "1950"},
+        {"key": "D", "text": "1952"}
+      ],
+      "explanation": "1947",
+      "expected_failures": ["cognitive_demand", "explanation_quality"],
+      "failure_reason": "Recall-only asking for date; explanation is just the answer repeated"
+    },
+    {
+      "id": "bad_011",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP USH Period 4: Jacksonian Democracy",
+      "question": "Which of the following best describes the impact of Andrew Jackson's policies on Native American populations?",
+      "answer": "B",
+      "answer_options": [
+        {"key": "A", "text": "Jackson expanded Native American land holdings through new treaties"},
+        {"key": "B", "text": "The Indian Removal Act of 1832 forced the relocation of southeastern tribes"},
+        {"key": "C", "text": "Jackson appointed Native American leaders to federal positions"},
+        {"key": "D", "text": "Native populations grew significantly under Jackson's protective policies"}
+      ],
+      "explanation": "The Indian Removal Act, signed in 1832, authorized the forced relocation of Native Americans from the Southeast to territories west of the Mississippi River, resulting in the Trail of Tears.",
+      "expected_failures": ["factual_accuracy"],
+      "failure_reason": "Factual error: The Indian Removal Act was signed in 1830, not 1832"
+    },
+    {
+      "id": "bad_012",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP USH Period 7: World War II",
+      "question": "What was the primary significance of the Battle of Midway in 1942?",
+      "answer": "C",
+      "answer_options": [
+        {"key": "A", "text": "It marked Germany's first major defeat on the Eastern Front"},
+        {"key": "B", "text": "It ended the war in Europe"},
+        {"key": "C", "text": "It was a turning point that halted Japanese expansion in the Pacific"},
+        {"key": "D", "text": "It led to the immediate surrender of Italy"}
+      ],
+      "explanation": "The Battle of Midway was fought in the Atlantic Ocean between American and German naval forces. The American victory ended Nazi naval dominance and turned the tide of the European war.",
+      "expected_failures": ["factual_accuracy"],
+      "failure_reason": "Factual error: Midway was in the Pacific against Japan, not the Atlantic against Germany"
+    },
+    {
+      "id": "bad_013",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP USH Period 3: American Revolution",
+      "question": "How did the French Revolution of 1789 influence American political development?",
+      "answer": "A",
+      "answer_options": [
+        {"key": "A", "text": "It inspired the formation of the Democratic-Republican Party"},
+        {"key": "B", "text": "It led directly to the War of 1812"},
+        {"key": "C", "text": "It caused the American Revolution to begin"},
+        {"key": "D", "text": "It resulted in the abolition of slavery in America"}
+      ],
+      "explanation": "The French Revolution's emphasis on liberty and equality resonated with Thomas Jefferson and James Madison, contributing to the formation of the Democratic-Republican Party which supported the revolutionary ideals.",
+      "expected_failures": ["curriculum_alignment"],
+      "failure_reason": "Curriculum misalignment: Question is about French Revolution influence (Period 4 topic), but labeled as Period 3 (American Revolution era)"
+    },
+    {
+      "id": "bad_014",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "hard",
+      "curriculum_info": "AP World History: Unit 2 - Networks of Exchange",
+      "question": "The Industrial Revolution began in England primarily because:",
+      "answer": "B",
+      "answer_options": [
+        {"key": "A", "text": "England had the largest population in Europe"},
+        {"key": "B", "text": "England possessed abundant coal and iron resources, capital from trade, and a favorable legal system for innovation"},
+        {"key": "C", "text": "English workers were more skilled than those in other countries"},
+        {"key": "D", "text": "The Catholic Church encouraged industrialization"}
+      ],
+      "explanation": "England's combination of natural resources, accumulated capital from colonial trade, a patent system protecting inventors, and a stable government created conditions that enabled the Industrial Revolution to begin there in the late 18th century.",
+      "expected_failures": ["curriculum_alignment"],
+      "failure_reason": "Curriculum misalignment: Industrial Revolution is a Unit 5-6 topic (1750-1900), not Unit 2 (1200-1450 Networks of Exchange)"
+    },
+    {
+      "id": "bad_015",
+      "expected_pass": false,
+      "expected_score_range": [0.0, 0.69],
+      "type": "mcq",
+      "difficulty": "medium",
+      "curriculum_info": "AP USH Period 8: Cold War",
+      "question": "Which event marked the beginning of the Cold War?",
+      "answer": "A",
+      "answer_options": [
+        {"key": "A", "text": "Winston Churchill's 'Iron Curtain' speech in 1946"},
+        {"key": "B", "text": "The Berlin Wall construction in 1961"},
+        {"key": "C", "text": "The Cuban Missile Crisis in 1962"},
+        {"key": "D", "text": "The Vietnam War in 1964"}
+      ],
+      "explanation": "Churchill gave the Iron Curtain speech in Fulton, Missouri, marking the start of the Cold War. This speech was delivered in 1948.",
+      "expected_failures": ["factual_accuracy"],
+      "failure_reason": "Factual inconsistency: Question says 1946 (correct), but explanation says 1948 (incorrect)"
+    }
+  ]
+}
