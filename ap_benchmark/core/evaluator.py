@@ -63,7 +63,7 @@ def get_client() -> anthropic.Anthropic:
 
 
 # Model for evaluation - Claude Sonnet with vision
-EVAL_MODEL = "claude-sonnet-4-20250514"
+EVAL_MODEL = "claude-sonnet-4-6"
 
 
 TYPE_ADDITIONS = {

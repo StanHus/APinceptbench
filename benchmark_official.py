@@ -40,8 +40,8 @@ MONGODB_URI = os.environ.get('MONGODB_URI')
 if not MONGODB_URI:
     raise ValueError("MONGODB_URI environment variable is required")
 ENDPOINT_URL = "http://192.168.1.24:8000/generate"
-NUM_STANDARDS = 200
-QUESTIONS_PER_STANDARD = 5  # Generate 5 questions per standard (1000 questions total)
+NUM_STANDARDS = 25
+QUESTIONS_PER_STANDARD = 3
 QUESTION_TYPES = ["mcq", "mcq_set", "saq", "leq", "dbq"]
 DIFFICULTIES = ["easy", "medium", "hard"]
 REQUEST_TIMEOUT = 180
@@ -163,8 +163,8 @@ def evaluate_question(qtype: str, question_data: Dict, curriculum_context: str) 
 
     try:
         response = anthropic_client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=2500,
+            model="claude-sonnet-4-6",
+            max_tokens=4000,
             messages=[{"role": "user", "content": full_prompt}]
         )
 
