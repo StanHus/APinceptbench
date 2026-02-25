@@ -84,8 +84,6 @@ def get_random_standards(num: int) -> List[Dict]:
     standards = apush + apwh
     random.shuffle(standards)
 
-    print(f"Sampled {len(apush)} APUSH + {len(apwh)} APWH = {len(standards)} standards")
-    print(f"Generating {QUESTIONS_PER_STANDARD} questions per standard = {len(standards) * QUESTIONS_PER_STANDARD} total tasks")
     return standards
 
 
@@ -258,17 +256,7 @@ async def run_benchmark():
     now = datetime.now(timezone.utc)
     db = get_db()
 
-    print("=" * 70)
-    print("OFFICIAL AP BENCHMARK")
-    print("=" * 70)
-    print(f"Run ID: {run_id}")
-    print(f"Evaluator Version: {PROMPT_VERSION}")
-    print(f"Endpoint: {ENDPOINT_URL}")
-    print(f"Standards: {NUM_STANDARDS}")
-    print(f"Questions per Standard: {QUESTIONS_PER_STANDARD}")
-    print(f"Total Expected: {NUM_STANDARDS * QUESTIONS_PER_STANDARD}")
-    print(f"Types: {QUESTION_TYPES}")
-    print("=" * 70)
+    print(f"\nAP Benchmark | {run_id[:8]} | {NUM_STANDARDS} standards × {QUESTIONS_PER_STANDARD} = {NUM_STANDARDS * QUESTIONS_PER_STANDARD} questions")
 
     # Sample standards
     standards = get_random_standards(NUM_STANDARDS)
@@ -286,18 +274,6 @@ async def run_benchmark():
             tasks.append({"standard": std, "type": qtype, "difficulty": diff, "payload": payload})
 
     random.shuffle(tasks)
-
-    # Show distribution
-    dist = {}
-    for t in tasks:
-        dist[t["type"]] = dist.get(t["type"], 0) + 1
-    print(f"\nTask distribution: {dist}")
-    print(f"Total: {len(tasks)} tasks")
-
-    # PHASE 1: Generation
-    print("\n" + "=" * 70)
-    print("PHASE 1: GENERATION")
-    print("=" * 70 + "\n")
 
     generated = []
     sem = asyncio.Semaphore(MAX_CONCURRENT_GEN)
@@ -318,15 +294,11 @@ async def run_benchmark():
                 # Match result to its original task by index
                 generated.append({"task": tasks[idx], "question": result})
 
-            print(f"\r  Generated: {len(generated)}/{len(tasks)}", end="", flush=True)
+            print(f"\rGenerating: {len(generated)}/{len(tasks)}", end="", flush=True)
 
     gen_time = time.time() - gen_start
-    print(f"\n  Done: {len(generated)}/{len(tasks)} in {gen_time:.0f}s")
-
-    # PHASE 2: Evaluation (using official rubrics)
-    print("\n" + "=" * 70)
-    print("PHASE 2: EVALUATION (Official AP Rubrics)")
-    print("=" * 70 + "\n")
+    gen_errors = len(tasks) - len(generated)
+    print(f"\rGenerated: {len(generated)}/{len(tasks)} ({gen_errors} errors) in {gen_time:.0f}s")
 
     eval_start = time.time()
     results = []
@@ -351,17 +323,13 @@ async def run_benchmark():
             status = "?"
             score = 0
 
-        print(f"\r  [{i+1}/{len(generated)}] {status} {task['type']:10} | {task['payload']['course']} | score: {score:.2f}", end="", flush=True)
+        passed_so_far = sum(1 for r in results if r["evaluation"].get("passed"))
+        print(f"\rEvaluating: {i+1}/{len(generated)} | {passed_so_far} passed", end="", flush=True)
 
         await asyncio.sleep(0.3)  # Rate limiting
 
     eval_time = time.time() - eval_start
-    print(f"\n  Done in {eval_time:.0f}s")
-
-    # PHASE 3: Save to database
-    print("\n" + "=" * 70)
-    print("PHASE 3: SAVE TO DATABASE")
-    print("=" * 70 + "\n")
+    print(f"\rEvaluated: {len(results)} in {eval_time:.0f}s" + " " * 20)
 
     questions_to_save = []
     evaluations_to_save = []
@@ -400,11 +368,9 @@ async def run_benchmark():
 
     if questions_to_save:
         db[QUESTIONS_COL].insert_many(questions_to_save)
-        print(f"  Saved {len(questions_to_save)} questions")
 
     if evaluations_to_save:
         db[EVALUATIONS_COL].insert_many(evaluations_to_save)
-        print(f"  Saved {len(evaluations_to_save)} evaluations")
 
     # Calculate statistics
     passed = sum(1 for e in evaluations_to_save if e.get("passed"))
@@ -449,31 +415,15 @@ async def run_benchmark():
     }
 
     db[RUNS_COL].insert_one(run_doc)
-    print(f"  Saved run summary")
 
-    # FINAL SUMMARY
-    print("\n" + "=" * 70)
-    print("FINAL RESULTS")
-    print("=" * 70)
-    print(f"\nRun ID: {run_id}")
-    print(f"Evaluator: {PROMPT_VERSION}")
-    print(f"\nOverall: {passed}/{len(results)} passed ({100*passed/len(results):.1f}%)")
-
-    print(f"\nBy Question Type:")
-    print("-" * 50)
+    # Summary
+    print(f"\n{'─'*50}")
+    print(f"RESULTS: {passed}/{len(results)} passed ({100*passed/len(results):.1f}%)")
+    print(f"{'─'*50}")
     for qtype in QUESTION_TYPES:
         s = by_type[qtype]
-        print(f"  {qtype:12} {s['passed']:3}/{s['total']:3} ({100*s['rate']:5.1f}%)")
-
-    print(f"\nBy Course:")
-    print("-" * 50)
-    for course, s in by_course.items():
-        print(f"  {course:8} {s['passed']:3}/{s['total']:3} ({100*s['rate']:5.1f}%)")
-
-    print(f"\nData saved to MongoDB:")
-    print(f"  - {QUESTIONS_COL}: {len(questions_to_save)} docs")
-    print(f"  - {EVALUATIONS_COL}: {len(evaluations_to_save)} docs")
-    print(f"  - {RUNS_COL}: run {run_id}")
+        print(f"  {qtype:10} {s['passed']:3}/{s['total']:3} ({100*s['rate']:5.1f}%)")
+    print(f"\nSaved to MongoDB: {run_id}")
 
     return run_id
 

@@ -443,22 +443,13 @@ def generate_markdown_report(analysis: dict) -> str:
 
 
 def main():
-    print("Fetching latest benchmark run...")
     run = get_latest_run()
-
     if not run:
         print("No benchmark runs found!")
         return
 
     run_id = run["_id"]
-    print(f"Analyzing run: {run_id}")
-    print(f"  Started: {run.get('started_at')}")
-    print(f"  Pass rate: {run.get('pass_rate', 0)*100:.1f}%")
-
-    print("\nPerforming comprehensive analysis...")
     analysis = analyze_run(run_id)
-
-    print("Generating report...")
     report = generate_markdown_report(analysis)
 
     # Ensure reports directory exists
@@ -479,13 +470,8 @@ def main():
     with open(latest_path, "w") as f:
         f.write(report)
 
-    print(f"\nReport saved to: {report_path}")
-    print(f"Latest symlink: {latest_path}")
-    print(f"\nSummary:")
-    print(f"  Total: {analysis['total_evaluated']}")
-    print(f"  Passed: {analysis['passed']}")
-    print(f"  Failed: {analysis['failed']}")
-    print(f"  Errors: {analysis['errors']}")
+    rate = (analysis['passed'] / analysis['total_evaluated'] * 100) if analysis['total_evaluated'] > 0 else 0
+    print(f"Report: {report_filename} | {analysis['passed']}/{analysis['total_evaluated']} passed ({rate:.1f}%)")
 
 
 if __name__ == "__main__":

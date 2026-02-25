@@ -71,8 +71,6 @@ def get_random_standards(num_standards: int = 50) -> List[Dict[str, Any]]:
 
     all_facts = apush_facts + apwh_facts
     random.shuffle(all_facts)
-
-    print(f"Sampled {len(apush_facts)} APUSH + {len(apwh_facts)} APWH = {len(all_facts)} standards")
     return all_facts
 
 
@@ -483,17 +481,10 @@ async def run_full_benchmark():
     run_id = str(uuid.uuid4())
     db = get_db()
 
-    print(f"\n{'='*70}")
-    print(f"Full AP Benchmark: Generate + Evaluate")
-    print(f"Run ID: {run_id}")
-    print(f"Endpoint: {ENDPOINT_URL}")
-    print(f"Question Types: {QUESTION_TYPES}")
-    print(f"{'='*70}\n")
+    print(f"\nAP Benchmark | {run_id[:8]} | {NUM_STANDARDS} standards")
 
-    # Sample standards
     standards = get_random_standards(NUM_STANDARDS)
 
-    # Build tasks - each standard gets one question type
     tasks = []
     for i, standard in enumerate(standards):
         qtype = QUESTION_TYPES[i % len(QUESTION_TYPES)]
@@ -504,23 +495,7 @@ async def run_full_benchmark():
             "difficulty": difficulty,
             "payload": build_payload(standard, qtype, difficulty)
         })
-
     random.shuffle(tasks)
-
-    # Count by type
-    type_counts = {}
-    for t in tasks:
-        type_counts[t["type"]] = type_counts.get(t["type"], 0) + 1
-    print("Task distribution:")
-    for qtype, count in sorted(type_counts.items()):
-        print(f"  {qtype}: {count}")
-
-    print(f"\nTotal tasks: {len(tasks)}")
-
-    # Phase 1: Generate all questions
-    print(f"\n{'='*70}")
-    print("PHASE 1: GENERATION")
-    print(f"{'='*70}\n")
 
     generated = []
     gen_semaphore = asyncio.Semaphore(MAX_CONCURRENT_GEN)
@@ -545,15 +520,10 @@ async def run_full_benchmark():
             else:
                 status = "✗"
 
-            print(f"\r  Generated: {len(generated)}/{len(tasks)} ({100*len(generated)/len(tasks):.0f}%)", end="", flush=True)
+            print(f"\rGenerating: {len(generated)}/{len(tasks)}", end="", flush=True)
 
     gen_time = time.time() - gen_start
-    print(f"\n\n  Generation complete: {len(generated)}/{len(tasks)} in {gen_time:.1f}s")
-
-    # Phase 2: Evaluate all questions
-    print(f"\n{'='*70}")
-    print("PHASE 2: EVALUATION")
-    print(f"{'='*70}\n")
+    print(f"\rGenerated: {len(generated)}/{len(tasks)} in {gen_time:.0f}s")
 
     eval_start = time.time()
     evaluated = []
@@ -580,24 +550,13 @@ async def run_full_benchmark():
             "evaluated_at": datetime.utcnow()
         })
 
-        if evaluation.get("evaluation_success"):
-            passed = evaluation.get("passed", False)
-            score = evaluation.get("overall_score", 0)
-            status = "✓" if passed else "✗"
-            print(f"\r  [{i+1}/{len(generated)}] {status} {task['type']:10} | score: {score:.2f}", end="", flush=True)
-        else:
-            print(f"\r  [{i+1}/{len(generated)}] ? {task['type']:10} | eval failed", end="", flush=True)
+        passed_so_far = sum(1 for e in evaluated if e["evaluation"].get("passed"))
+        print(f"\rEvaluating: {i+1}/{len(generated)} | {passed_so_far} passed", end="", flush=True)
 
-        # Small delay to avoid rate limits
         await asyncio.sleep(0.5)
 
     eval_time = time.time() - eval_start
-    print(f"\n\n  Evaluation complete in {eval_time:.1f}s")
-
-    # Phase 3: Save to database
-    print(f"\n{'='*70}")
-    print("PHASE 3: SAVING TO DATABASE")
-    print(f"{'='*70}\n")
+    print(f"\rEvaluated: {len(evaluated)} in {eval_time:.0f}s" + " " * 20)
 
     # Prepare documents for insertion
     questions_docs = []
@@ -633,14 +592,10 @@ async def run_full_benchmark():
             "evaluated_at": item["evaluated_at"],
         })
 
-    # Insert into MongoDB
     if questions_docs:
         db[QUESTIONS_COLLECTION].insert_many(questions_docs)
-        print(f"  Saved {len(questions_docs)} questions to {QUESTIONS_COLLECTION}")
-
     if evaluations_docs:
         db[EVALUATIONS_COLLECTION].insert_many(evaluations_docs)
-        print(f"  Saved {len(evaluations_docs)} evaluations to {EVALUATIONS_COLLECTION}")
 
     # Save run summary
     passed_count = sum(1 for e in evaluations_docs if e.get("passed"))
@@ -673,32 +628,14 @@ async def run_full_benchmark():
         }
 
     db[RUNS_COLLECTION].insert_one(run_summary)
-    print(f"  Saved run summary to {RUNS_COLLECTION}")
 
-    # Print final summary
-    print(f"\n{'='*70}")
-    print("FINAL SUMMARY")
-    print(f"{'='*70}\n")
-
-    print(f"Run ID: {run_id}")
-    print(f"Total Generated: {len(generated)}/{len(tasks)}")
-    print(f"Total Evaluated: {len(evaluated)}")
-    print(f"Passed: {passed_count} ({100*passed_count/len(evaluated):.1f}%)")
-    print(f"Failed: {failed_count} ({100*failed_count/len(evaluated):.1f}%)")
-
-    print(f"\nBy Question Type:")
-    print("-" * 50)
+    print(f"\n{'─'*50}")
+    print(f"RESULTS: {passed_count}/{len(evaluated)} passed ({100*passed_count/len(evaluated):.1f}%)")
+    print(f"{'─'*50}")
     for qtype in QUESTION_TYPES:
-        stats = run_summary["by_type"].get(qtype, {})
-        total = stats.get("total", 0)
-        passed = stats.get("passed", 0)
-        rate = stats.get("pass_rate", 0)
-        print(f"  {qtype:12} {passed:3}/{total:3} ({100*rate:5.1f}%)")
-
-    print(f"\nResults saved to MongoDB:")
-    print(f"  - {QUESTIONS_COLLECTION}: {len(questions_docs)} documents")
-    print(f"  - {EVALUATIONS_COLLECTION}: {len(evaluations_docs)} documents")
-    print(f"  - {RUNS_COLLECTION}: 1 document (run_id: {run_id})")
+        s = run_summary["by_type"].get(qtype, {})
+        print(f"  {qtype:10} {s.get('passed',0):3}/{s.get('total',0):3} ({100*s.get('pass_rate',0):5.1f}%)")
+    print(f"\nSaved to MongoDB: {run_id}")
 
     return run_id
 

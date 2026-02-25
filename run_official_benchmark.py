@@ -89,19 +89,6 @@ def get_random_standards(num_standards: int = 50) -> List[Dict[str, Any]]:
 
     all_facts = apush_facts + apwh_facts
     random.shuffle(all_facts)
-
-    print(f"\nSampled {len(apush_facts)} APUSH + {len(apwh_facts)} APWH = {len(all_facts)} total standards")
-
-    # Show unit distribution
-    units = {}
-    for f in all_facts:
-        key = f"{f.get('course')}-U{f.get('unit', '?')}"
-        units[key] = units.get(key, 0) + 1
-
-    print("Unit distribution:")
-    for k in sorted(units.keys()):
-        print(f"  {k}: {units[k]}")
-
     return all_facts
 
 
@@ -257,40 +244,16 @@ async def generate_question(
 async def run_benchmark():
     """Run the full benchmark."""
     run_id = str(uuid.uuid4())[:8]
-    print(f"\n{'='*60}")
-    print(f"Official AP Question Types Benchmark")
-    print(f"Run ID: {run_id}")
-    print(f"Endpoint: {ENDPOINT_URL}")
-    print(f"Question Types: {QUESTION_TYPES}")
-    print(f"{'='*60}\n")
+    print(f"\nAP Benchmark | {run_id} | {NUM_STANDARDS} standards")
 
-    # Sample standards
     standards = get_random_standards(NUM_STANDARDS)
 
-    # Build task list
-    # Each standard gets ONE question type (randomly assigned)
-    # This ensures coverage across types while using all standards
-    tasks = []
-
-    # Distribute question types across standards
     type_assignments = []
     for i, standard in enumerate(standards):
         qtype = QUESTION_TYPES[i % len(QUESTION_TYPES)]
         difficulty = random.choice(DIFFICULTIES)
         type_assignments.append((standard, qtype, difficulty))
-
-    # Shuffle to randomize order
     random.shuffle(type_assignments)
-
-    print(f"\nTask Distribution:")
-    type_counts = {}
-    for _, qtype, _ in type_assignments:
-        type_counts[qtype] = type_counts.get(qtype, 0) + 1
-    for qtype, count in sorted(type_counts.items()):
-        print(f"  {qtype}: {count} tasks")
-
-    print(f"\nTotal tasks: {len(type_assignments)}")
-    print(f"\nStarting generation...\n")
 
     # Run tasks with concurrency limit
     stats = BenchmarkStats()
@@ -319,50 +282,19 @@ async def run_benchmark():
             results.append(result)
             completed += 1
 
-            status = "✓" if result.success else "✗"
-            print(f"\r[{completed}/{total}] {status} {result.question_type:10} | {result.course} U{result.unit} | {result.generation_time:.1f}s", end="", flush=True)
+            print(f"\rGenerating: {completed}/{total}", end="", flush=True)
 
     total_time = time.time() - start_time
-    print(f"\n\nBenchmark completed in {total_time:.1f}s\n")
+    print(f"\rGenerated: {stats.success}/{stats.total} in {total_time:.0f}s" + " " * 20)
 
-    # Print results
-    print("="*60)
-    print("RESULTS SUMMARY")
-    print("="*60)
-
-    print(f"\nOverall: {stats.success}/{stats.total} succeeded ({100*stats.success/stats.total:.1f}%)")
-
-    print(f"\nBy Question Type:")
-    print("-"*40)
+    print(f"\n{'─'*50}")
+    print(f"RESULTS: {stats.success}/{stats.total} ({100*stats.success/stats.total:.1f}%)")
+    print(f"{'─'*50}")
     for qtype in QUESTION_TYPES:
         if qtype in stats.by_type:
             s = stats.by_type[qtype]["success"]
-            f = stats.by_type[qtype]["failed"]
-            t = s + f
-            pct = 100*s/t if t > 0 else 0
-
-            # Average generation time
-            times = stats.generation_times.get(qtype, [])
-            avg_time = sum(times)/len(times) if times else 0
-
-            print(f"  {qtype:12} {s:3}/{t:3} ({pct:5.1f}%) | avg: {avg_time:.1f}s")
-
-    print(f"\nBy Course:")
-    print("-"*40)
-    for course in sorted(stats.by_course.keys()):
-        s = stats.by_course[course]["success"]
-        f = stats.by_course[course]["failed"]
-        t = s + f
-        pct = 100*s/t if t > 0 else 0
-        print(f"  {course:8} {s:3}/{t:3} ({pct:5.1f}%)")
-
-    if stats.errors:
-        print(f"\nErrors ({len(stats.errors)}):")
-        print("-"*40)
-        for err in stats.errors[:10]:  # Show first 10
-            print(f"  {err[:80]}")
-        if len(stats.errors) > 10:
-            print(f"  ... and {len(stats.errors) - 10} more")
+            t = s + stats.by_type[qtype]["failed"]
+            print(f"  {qtype:10} {s:3}/{t:3} ({100*s/t if t else 0:5.1f}%)")
 
     # Save results
     results_file = f"benchmark_official_{run_id}.json"
@@ -398,8 +330,7 @@ async def run_benchmark():
             ]
         }, f, indent=2)
 
-    print(f"\nResults saved to: {results_file}")
-
+    print(f"\nSaved: {results_file}")
     return stats
 
 
