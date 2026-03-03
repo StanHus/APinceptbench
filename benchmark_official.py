@@ -40,7 +40,7 @@ MONGODB_URI = os.environ.get('MONGODB_URI')
 if not MONGODB_URI:
     raise ValueError("MONGODB_URI environment variable is required")
 ENDPOINT_URL = "http://192.168.1.24:8000/generate"
-NUM_STANDARDS = 25
+NUM_STANDARDS = 20
 QUESTIONS_PER_STANDARD = 3
 QUESTION_TYPES = ["mcq", "mcq_set", "saq", "leq", "dbq"]
 DIFFICULTIES = ["easy", "medium", "hard"]
@@ -164,7 +164,7 @@ def evaluate_question(qtype: str, question_data: Dict, curriculum_context: str) 
     try:
         response = anthropic_client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=4000,
+            max_tokens=8000,
             messages=[{"role": "user", "content": full_prompt}]
         )
 
@@ -276,6 +276,7 @@ async def run_benchmark():
     random.shuffle(tasks)
 
     generated = []
+    gen_failed_tasks = []  # Track failed generations
     sem = asyncio.Semaphore(MAX_CONCURRENT_GEN)
     gen_start = time.time()
 
@@ -293,11 +294,14 @@ async def run_benchmark():
             if result:
                 # Match result to its original task by index
                 generated.append({"task": tasks[idx], "question": result})
+            else:
+                # Track failed generations
+                gen_failed_tasks.append(tasks[idx])
 
             print(f"\rGenerating: {len(generated)}/{len(tasks)}", end="", flush=True)
 
     gen_time = time.time() - gen_start
-    gen_errors = len(tasks) - len(generated)
+    gen_errors = len(gen_failed_tasks)
     print(f"\rGenerated: {len(generated)}/{len(tasks)} ({gen_errors} errors) in {gen_time:.0f}s")
 
     eval_start = time.time()
@@ -372,18 +376,28 @@ async def run_benchmark():
     if evaluations_to_save:
         db[EVALUATIONS_COL].insert_many(evaluations_to_save)
 
-    # Calculate statistics
+    # Calculate statistics (generation failures count as 0s)
     passed = sum(1 for e in evaluations_to_save if e.get("passed"))
-    failed = sum(1 for e in evaluations_to_save if e.get("passed") == False)
+    eval_failed = sum(1 for e in evaluations_to_save if e.get("passed") == False)
+    failed = eval_failed + gen_errors  # Include generation failures
+
+    # Count generation failures by type
+    gen_failed_by_type = {}
+    for task in gen_failed_tasks:
+        qtype = task["type"]
+        gen_failed_by_type[qtype] = gen_failed_by_type.get(qtype, 0) + 1
 
     by_type = {}
     for qtype in QUESTION_TYPES:
         type_evals = [e for e in evaluations_to_save if e["type"] == qtype]
         type_passed = sum(1 for e in type_evals if e.get("passed"))
+        type_gen_failed = gen_failed_by_type.get(qtype, 0)
+        type_total = len(type_evals) + type_gen_failed
         by_type[qtype] = {
-            "total": len(type_evals),
+            "total": type_total,
             "passed": type_passed,
-            "rate": type_passed / len(type_evals) if type_evals else 0
+            "gen_failed": type_gen_failed,
+            "rate": type_passed / type_total if type_total else 0
         }
 
     by_course = {}
@@ -397,17 +411,20 @@ async def run_benchmark():
         }
 
     # Save run summary
+    total_questions = len(tasks)  # Total attempted (includes gen failures)
     run_doc = {
         "_id": run_id,
         "started_at": now,
         "evaluator_version": PROMPT_VERSION,
         "endpoint": ENDPOINT_URL,
         "standards_sampled": len(standards),
+        "total_attempted": total_questions,
         "generated": len(generated),
+        "generation_failures": gen_errors,
         "evaluated": len(results),
         "passed": passed,
         "failed": failed,
-        "pass_rate": passed / len(results) if results else 0,
+        "pass_rate": passed / total_questions if total_questions else 0,
         "generation_time": gen_time,
         "evaluation_time": eval_time,
         "by_type": by_type,
@@ -416,9 +433,11 @@ async def run_benchmark():
 
     db[RUNS_COL].insert_one(run_doc)
 
-    # Summary
+    # Summary (gen failures count as 0s)
     print(f"\n{'─'*50}")
-    print(f"RESULTS: {passed}/{len(results)} passed ({100*passed/len(results):.1f}%)")
+    print(f"RESULTS: {passed}/{total_questions} passed ({100*passed/total_questions:.1f}%)")
+    if gen_errors:
+        print(f"  (includes {gen_errors} generation failures as 0s)")
     print(f"{'─'*50}")
     for qtype in QUESTION_TYPES:
         s = by_type[qtype]

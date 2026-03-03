@@ -30,3 +30,5 @@ archive/
 # OS
 .DS_Store
 Thumbs.db
+
+*.zip

@@ -31,7 +31,8 @@ def format_mcq_content(question_dict: dict) -> str:
         question_dict.get('question') or
         question_dict.get('stem') or
         question_dict.get('answer_options') or
-        question_dict.get('options')
+        question_dict.get('options') or
+        question_dict.get('choices')  # Generator uses 'choices' as dict
     )
 
     if not has_content:
@@ -75,12 +76,20 @@ def format_mcq_content(question_dict: dict) -> str:
     lines.append(question_text)
     lines.append("")
 
-    # Options - handle both formats
+    # Options - handle multiple formats from different generators
     lines.append("## OPTIONS")
     lines.append("")
-    options = question_dict.get('answer_options') or question_dict.get('options') or []
 
-    if options:
+    # Try different field names and formats
+    options = question_dict.get('answer_options') or question_dict.get('options')
+    choices = question_dict.get('choices')  # Generator returns dict {"A": "text", ...}
+
+    if choices and isinstance(choices, dict):
+        # Handle dict format: {"A": "text", "B": "text", "C": "text", "D": "text"}
+        for key in ["A", "B", "C", "D"]:
+            if key in choices:
+                lines.append(f"**{key})** {choices[key]}")
+    elif options:
         for opt in options:
             if isinstance(opt, dict):
                 key = opt.get('key') or opt.get('letter') or '?'
@@ -185,9 +194,17 @@ def format_mcq_set_content(question_dict: dict) -> str:
                 lines.append(f"**Stem:** {q_text}")
                 lines.append("")
 
-                # Options
-                options = q.get('answer_options') or q.get('options') or []
-                if options:
+                # Options - handle multiple formats
+                options = q.get('answer_options') or q.get('options')
+                choices = q.get('choices')  # Generator returns dict {"A": "text", ...}
+
+                if choices and isinstance(choices, dict):
+                    # Handle dict format: {"A": "text", "B": "text", ...}
+                    lines.append("**Options:**")
+                    for key in ["A", "B", "C", "D"]:
+                        if key in choices:
+                            lines.append(f"  {key}) {choices[key]}")
+                elif options:
                     lines.append("**Options:**")
                     for opt in options:
                         if isinstance(opt, dict):
@@ -237,8 +254,8 @@ def format_saq_content(question_dict: dict) -> str:
     """
     lines = []
 
-    # Check for content
-    has_prompt = bool(question_dict.get('prompt') or question_dict.get('question'))
+    # Check for content - generator uses 'preamble' and parts dict
+    has_prompt = bool(question_dict.get('prompt') or question_dict.get('question') or question_dict.get('preamble'))
     has_parts = bool(question_dict.get('parts'))
 
     if not has_prompt and not has_parts:
@@ -275,23 +292,55 @@ def format_saq_content(question_dict: dict) -> str:
             lines.append(str(stimulus))
         lines.append("")
 
-    # Main prompt
+    # Main prompt / Preamble
     lines.append("## QUESTION PROMPT")
     lines.append("")
-    prompt = question_dict.get('prompt') or question_dict.get('question') or '*No prompt provided*'
+    # Generator may use 'preamble' instead of 'prompt'
+    prompt = question_dict.get('preamble') or question_dict.get('prompt') or question_dict.get('question') or '*No prompt provided*'
     lines.append(prompt)
     lines.append("")
 
     # Parts - THIS IS CRITICAL FOR SAQ
+    # Generator returns parts as dict: {"a": {prompt, skill, scoring_notes}, ...}
     lines.append("## PARTS")
     lines.append("")
 
-    parts = question_dict.get('parts', [])
-    if parts:
+    parts = question_dict.get('parts', {})
+    part_count = 0
+
+    if isinstance(parts, dict):
+        # Handle dict format: {"a": {...}, "b": {...}, "c": {...}}
+        for letter in ['a', 'b', 'c']:
+            part = parts.get(letter, {})
+            if part:
+                part_count += 1
+                if isinstance(part, dict):
+                    # Get task from various possible field names
+                    task = (part.get('prompt') or part.get('task') or
+                           part.get('question') or '*No task specified*')
+                    task_verb = part.get('task_verb') or part.get('skill') or ''
+
+                    lines.append(f"**({letter})** {task}")
+
+                    if task_verb:
+                        lines.append(f"   *Task verb/Skill: {task_verb}*")
+                    scoring = part.get('scoring_criteria') or part.get('scoring_notes') or ''
+                    if scoring:
+                        lines.append(f"   *Scoring: {scoring}*")
+                    if part.get('sample_response'):
+                        lines.append(f"   *Sample: {part['sample_response'][:100]}...*")
+                else:
+                    lines.append(f"**({letter})** {part}")
+                lines.append("")
+            else:
+                lines.append(f"**({letter})** *No content for part {letter}*")
+                lines.append("")
+    elif isinstance(parts, list):
+        # Handle list format (legacy)
         for i, part in enumerate(parts):
             letter = chr(ord('a') + i)
+            part_count += 1
             if isinstance(part, dict):
-                # Get task from various possible field names
                 task = (part.get('task') or part.get('prompt') or
                        part.get('question') or '*No task specified*')
                 task_verb = part.get('task_verb', '')
@@ -302,8 +351,6 @@ def format_saq_content(question_dict: dict) -> str:
                     lines.append(f"   *Task verb: {task_verb}*")
                 if part.get('scoring_criteria'):
                     lines.append(f"   *Scoring: {part['scoring_criteria']}*")
-                if part.get('sample_response'):
-                    lines.append(f"   *Sample: {part['sample_response'][:100]}...*")
             else:
                 lines.append(f"**({letter})** {part}")
             lines.append("")
@@ -313,7 +360,7 @@ def format_saq_content(question_dict: dict) -> str:
         lines.append("SAQ requires exactly 3 parts.")
 
     # Part count verification
-    lines.append(f"**Total Parts:** {len(parts)} (required: 3)")
+    lines.append(f"**Total Parts:** {part_count} (required: 3)")
     lines.append("")
 
     # Metadata

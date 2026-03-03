@@ -443,12 +443,17 @@ def generate_markdown_report(analysis: dict) -> str:
 
 
 def main():
-    run = get_latest_run()
-    if not run:
-        print("No benchmark runs found!")
-        return
+    import sys
 
-    run_id = run["_id"]
+    # Accept optional run_id argument
+    if len(sys.argv) > 1:
+        run_id = sys.argv[1]
+    else:
+        run = get_latest_run()
+        if not run:
+            print("No benchmark runs found!")
+            return
+        run_id = run["_id"]
     analysis = analyze_run(run_id)
     report = generate_markdown_report(analysis)
 
