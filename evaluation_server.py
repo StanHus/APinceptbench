@@ -52,7 +52,7 @@ API_VERSION = "2.0.0"
 
 # Question types
 VALID_QUESTION_TYPES = ["mcq", "mcq_set", "saq", "leq", "dbq"]
-VALID_COURSES = ["APUSH", "APWH"]
+VALID_COURSES = ["APUSH", "APWH", "APEURO", "APGOV", "APHG", "APMAC", "APMIC"]
 VALID_DIFFICULTIES = ["easy", "medium", "hard"]
 
 # Initialize Flask app
